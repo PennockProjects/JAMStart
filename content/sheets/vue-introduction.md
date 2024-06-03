@@ -1,5 +1,5 @@
 ---
-title: Introduction to Vue 3
+title: Vue 3 Introduction
 description: A beginner's guide to getting started with Vue 3.
 image: /images/vue-logo.png
 head:
@@ -10,7 +10,16 @@ publishedAt: 2023-05-03 13:46:00
 isToc: true
 ---
 
-## What is Vue 3?
+::hero
+{{ title }}
+
+#subtitle
+A JavaScript front end framework
+
+#image
+![Vue 3 Introduction](/images/vue-logo.png)
+::
+
 
 Vue.js 3 is a progressive JavaScript framework for building user interfaces on the web. It's designed to be incrementally adoptable and can easily scale between a library and a full-featured framework.
 
@@ -43,5 +52,3 @@ const app = createApp({
 })
 app.mount('#app')
 ```
-
-![Vue 3 Introduction](/images/vue-logo.png)

@@ -142,6 +142,28 @@ produces =>
 </html>
 ```
 
+## Adding Footnotes
+
+```md
+
+## Add the "[^1]" footnote reference in the text
+## The number is manual.
+Example text with specific[^1] footnote reference.
+
+## Below the text add a spearate line
+## "[^1]: footnote text goes here"
+## number must match footnote reference
+[^1]: Full footnote for 'specific' at document end
+
+## The footnote is removed from document flow
+## and placed at the bottom of the document
+## in an ordered list, number is manual
+
+```
+Example text with **specific[^1]** footnote reference.
+
+[^1]: Full footnote for **'specific'** at document end
+
 ## Code Block Syntax
 You can specify a language syntax highlighting for the code block by adding a language modifier after first back ticks, for example instead of " \`\`\` " you write " \`\`\`js " or " \`\`\`html " 
 
@@ -207,3 +229,4 @@ For inline code, you add an escape `\` before the back tick \`
 [new tab](https://www.x.com/){:target="_blank"}
 
 * see [stackoverflow discussion](https://stackoverflow.com/questions/4425198/can-i-create-links-with-target-blank-in-markdown)
+

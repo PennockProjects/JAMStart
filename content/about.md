@@ -15,6 +15,8 @@ My current incubation projects are:
 - Greek and Roman Mythology [Minimyth](http://minimyth.com) - My site about mythology as represented on ancient coins. I'm passionate about the topic, but my key incubation learnings from this project are to explore a collection of Mongo NoSQL documents, with a custom schema and content images and relate them to cloud search.
 - Elder Tech - No site yet, but exploring how to leverage AI for senior citizen to provide their medical history, information about recent advances, and drug interactions.
 
+[^1]: [nuxt](http://nuxt.com)
+
 ## Previous Jobs and Projects
 - Game servers and services for Wizards of the Coast Dungeons and Dragon Unreal Engine (v5) virtual table top game
 - API services and operations for Wizards of the Coast Magic: the Gathering Arena
@@ -24,18 +26,17 @@ My current incubation projects are:
 - Program Management for Microsoft GameVoice voice over IP
 - Device Drivers for SideWinder Gaming Devices, Microsoft Mouse, and the Natural Keyboard
 
-## What software/hardware do I use?
+## Tools and Tech Stack
 
-Here's a list of everyday used software and hardware:
+What tools and software did I use to build this blog?
 
-- ASUS Republic of Gaming laptop
-- VSCode
-- Chrome
+- Visual Studio Code
+- Vue
 - Nuxt
-- Docker
-- Kubernetes and Agones
-- AWS
-- Copilot/Chat GPT
-- Udemy
+- NuxtContent Markdown
 
-[^1]: [nuxt](http://nuxt.com)
+Inspired by Udemy [course](https://www.udemy.com/course/master-nuxt-full-stack-complete-guide/learn/lecture/40391596#overview) *Unlock Nuxt 3 & Vue Mastery: Build a Markdown Blog-Portfolio and Supabase Finance Tracker*
+
+## Contact me at
+- Email [pennockprojects at gee mail dot com](mailto:pennockprojects@gmail.com)
+- Twitter [@pennockprojects](https://twitter.com/PennockProjects){:target="_blank"}

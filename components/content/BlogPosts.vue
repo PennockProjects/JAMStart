@@ -3,15 +3,23 @@ const props = defineProps({
   limit: {
     type: Number,
     default: null
+  },
+  contentRoot: {
+    type: String,
+    default: 'blog'
+  },
+  sort: {
+    type: Object,
+    default: {publishedAt: -1}
   }
 })
 const { data } = await useAsyncData(
-    'blog-list',
+    props.contentRoot + '-list',
     () => {
-      const query = queryContent('blog')
-        .where({_path: { $ne: '/blog'} })
+      const query = queryContent(props.contentRoot)
+        .where({_path: { $ne: '/'+props.contentRoot} })
         .only(['_path', 'title', 'publishedAt'])
-        .sort({publishedAt: -1})
+        .sort(props.sort)
 
       if (props.limit) {
         query.limit(props.limit)

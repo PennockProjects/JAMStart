@@ -1,5 +1,5 @@
 <script setup>
-  const activeId = ref(null)
+const activeId = ref(null)
 
 onMounted(() => {
   const callback = (entries) => {
