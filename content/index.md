@@ -9,7 +9,7 @@ Read more [about me](/about) or my latest [projects](/projects)
 
 
 ## Latest on my blog
-::LatestBlogPosts
+::LatestPosts
 ---
 limit: 3
 ---

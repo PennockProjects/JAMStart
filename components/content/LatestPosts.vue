@@ -9,9 +9,9 @@ const props = defineProps({
 
 
 <template>
-  <BlogPosts v-slot="{posts}" :limit="limit">
+  <PostList v-slot="{posts}" :limit="limit" :sort="{publishedAt: -1}" contentRoot="blog" >
     <div v-for="post in posts" :key="post.id">
       <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
     </div>
-  </BlogPosts>
+  </PostList>
 </template>

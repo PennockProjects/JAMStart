@@ -1,5 +1,6 @@
 ---
-title: Git
+title: Git Cheat Sheet
+topic: Git
 description: A cheat sheet to using Git
 publishedAt: 2023-05-27 10:00:00
 isToc: true
@@ -76,3 +77,13 @@ git push origin main
 ### Stashing
 - `git stash`: Stash changes
 - `git stash pop`: Apply stashed changes
+
+### Delete Branch
+To delete the branch locally and remote use the following two commands.
+
+```shell
+git push -d <remote_name> <branchname>
+git branch -d <branchname>
+```
+
+Note: In most cases, <remote_name> will be origin.

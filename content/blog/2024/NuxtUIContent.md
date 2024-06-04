@@ -1,5 +1,6 @@
 ---
 title: NuxtUI with NuxtContent
+topic: NuxtUI
 description: A post about using Nuxt NuxtUI module with components such as VerticalNavigation and Dropdown with NuxtContent module components such as tailwind typographic prose, ContentRenderer and ContentNavigation
 publishedAt: 2024-05-16 10:00
 isToc: true

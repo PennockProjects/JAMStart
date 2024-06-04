@@ -1,5 +1,6 @@
 ---
-title: Markdown
+title: Markdown Cheat Sheet
+topic: Markdown
 description: A cheat sheet to using Markdown
 publishedAt: 2023-05-13 10:00:00
 isToc: true

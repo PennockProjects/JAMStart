@@ -1,5 +1,6 @@
 ---
-title: NuxtContent
+title: Intro to NuxtContent Markdown Content
+topic: NuxtContent
 description: Some tips and tricks in working with Nuxt Content
 publishedAt: 2024-06-03 10:00
 isToc: true

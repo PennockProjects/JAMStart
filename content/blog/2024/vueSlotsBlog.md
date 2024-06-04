@@ -1,5 +1,6 @@
 ---
-title: Vue 3 Slots Intro
+title: Intro to Vue 3 Slots
+topic: Vue
 description: How slots are used in Vue 3
 publishedAt: 2024-05-23 10:00:00
 isToc: true

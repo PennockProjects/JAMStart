@@ -1,5 +1,6 @@
 ---
-title: Vue 3 Introduction
+title: Vue 3 Basics
+topic: Vue
 description: A beginner's guide to getting started with Vue 3.
 image: /images/vue-logo.png
 head:

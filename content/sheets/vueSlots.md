@@ -1,5 +1,6 @@
 ---
 title: Vue 3 Slots
+topic: Vue
 description: A cheat sheet guide for Vue 3 Slots
 publishedAt: 2023-05-23 10:00:00
 isToc: true

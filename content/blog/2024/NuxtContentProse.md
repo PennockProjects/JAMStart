@@ -1,18 +1,14 @@
 ---
-title: NuxtContent and Tailwind Typographic Prose
+title: Using Tailwind Typographic on NuxtContent Prose
+topic: NuxtContent
 description: Tips and tricks in working with markdown generated HTML by Nuxt Content, NuxtContent, and Tailwind Typographic prose.
 publishedAt: 2024-05-17 10:00
 isToc: true
 tags:
-  - Vue
-  - Nuxt
   - NuxtContent
   - Tailwind
-  - HTML
-  - CSS
-  - JS
-  - prose
-  - markdown
+  - Prose
+  - Markdown
 
 ---
 

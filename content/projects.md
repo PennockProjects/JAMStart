@@ -2,6 +2,6 @@
 title: Projects
 ---
 
-Check out some of my recent projects on GitHub
+Pennock Projects are a collection of personal projects.  Check out my public projects on GitHub
 
 ::ProjectList

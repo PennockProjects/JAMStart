@@ -1,10 +1,11 @@
 ---
-title: NuxtUI Tailwind Responsive
+title: Tailwind Responsive with NuxtUI
+topic: Tailwind
 description: Responsive design for a site skeleton using NuxtUI components and Tailwind responsive design
 publishedAt: 2024-05-10 12:00:00
 ---
 
-The [NuxtUI Free](https://ui.nuxt.com/getting-started) module, does not contain the basic site skeleton framework elements as their professional version [NuxtUI Pro](https://ui.nuxt.com/pro/getting-started), such as UPageBody, UPageColumns, UPageHero, UAside, and UMain. Tailwind CSS module does support a [Tailwind responsive design](https://tailwindcss.com/docs/responsive-design)  This post will show how to use Tailwind CSS with the Nuxt UI Free module.
+The [NuxtUI](https://ui.nuxt.com/getting-started) module free version, does not contain the basic site skeleton framework elements as their professional version [NuxtUI Pro](https://ui.nuxt.com/pro/getting-started), such as UPageBody, UPageColumns, UPageHero, UAside, and UMain. Tailwind CSS module does support a [Tailwind responsive design](https://tailwindcss.com/docs/responsive-design)  This post will show how to use Tailwind CSS with the Nuxt UI Free module.
 
 ## NuxtUI website
 When one examines the source of the NuxtUI website itself, you can see that is uses a basic site response skeleton as shown below.
