@@ -3,9 +3,11 @@ export default defineNuxtConfig({
   app: {
     pageTransition: {name: 'page', mode: 'out-in'}
   },
+
   colorMode: {
     classSuffix: ''
   },
+
   content: {
     markdown: {
       anchorLinks: false,
@@ -25,21 +27,27 @@ export default defineNuxtConfig({
         'asm', 'c', 'cpp', 'python', 'reg', 'terraform']
     }
   },
+
   devtools: { enabled: true },
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     "@nuxt/content",
     "@nuxt/image"
   ],
+
   nitro: {
     prerender: {
       routes: ['/sitemap.xml']
     }
   },
+
   router: {
     options: {
       scrollBehaviorType: 'smooth'
     }
-  }
+  },
+
+  compatibilityDate: '2024-08-13'
 })
