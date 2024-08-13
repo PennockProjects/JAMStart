@@ -1,0 +1,13 @@
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qtitle\ndescription\nimage\nauthor handle\nsite handle\ntweeter - whoever tweeted the article URL\\E$"}
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q::figure-caption A large building construction site #caption An actual photo showing how the Pennock Projects website was built ::\\E$"}
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q::monk-inset{size='xl'} N ::\\E$"}
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q::monk-inset{size='lg'} M ::\\E$"}
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q::monk-inset{float='right' size='xl'} Page from a Bible Illuminated Manuscript ::\\E$"}
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q::FigureCaption A Picture with a Caption FigureCaption example\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qxl\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qlg\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qmd\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qsm\\E$"}
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q::monk-inset{size='xs'} Xg :: ::monk-inset{size='xs' float='right'} Q ::\\E$"}
+{"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q::monk-inset{size='sm'} S :: ::monk-inset{size='sm' float='right'} Wy :: Cillum esse pariatur et culpa amet.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QAd cupidatat commodo quis quis consequat.\\E$"}

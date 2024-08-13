@@ -1,11 +1,13 @@
 ---
 title: Hello World
+description: When I first learned to code, I was told that I should always write a 'Hello, World!' module first.
 topic: General
-publishedAt: 2024-05-03 13:46:00
+createDate: 2024-05-03
+createAuthor: John Pennock
 ---
 Hello, World!
 
-```C
+```
 #include <stdio.h>
 
 int main()

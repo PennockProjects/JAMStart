@@ -1,9 +1,11 @@
 ---
 title: Git Cheat Sheet
+description: A examples to using Git
 topic: Git
-description: A cheat sheet to using Git
-publishedAt: 2023-05-27 10:00:00
 isToc: true
+createDate: 2023-05-27
+createAuthor: John Pennock
+
 ---
 
 - [Piotr Jura Cheat Sheet](https://www.fadocodecamp.com/posts/git-commands-cheat-sheet-for-beginners)

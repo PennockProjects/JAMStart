@@ -21,7 +21,7 @@ const repos = computed(
           <a :href="repo.html_url" target="_blank">
             <div class="flex items-center justify-between text-sm">
               <div class="font-semibold">{{repo.name}}</div>
-              <div>{{ repo.stargazers_count }} *</div>
+              <!-- <div>{{ repo.stargazers_count }} *</div> -->
             </div>
             <p class="text-sm">{{ repo.description }}</p>
           </a>

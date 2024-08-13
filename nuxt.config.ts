@@ -8,7 +8,8 @@ export default defineNuxtConfig({
   },
   content: {
     markdown: {
-      anchorLinks: false
+      anchorLinks: false,
+      remarkPlugins: ['remark-unwrap-images']
     },
     highlight: {
       theme: {
@@ -18,7 +19,10 @@ export default defineNuxtConfig({
         dark: 'min-dark',
         // Theme used if `html.sepia`
         // sepia: 'monokai'
-      }
+      },
+      langs: [ 
+        'json', 'js', 'typescript', 'html', 'css', 'vue', 'shell', 'mdc', 'markdown', 'yaml',
+        'asm', 'c', 'cpp', 'python', 'reg', 'terraform']
     }
   },
   devtools: { enabled: true },
@@ -28,14 +32,14 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxt/image"
   ],
-  router: {
-    options: {
-      scrollBehaviorType: 'smooth'
-    }
-  },
   nitro: {
     prerender: {
       routes: ['/sitemap.xml']
+    }
+  },
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
     }
   }
 })

@@ -1,7 +1,28 @@
 <script setup>
+const socialDefaults = {
+  siteName: 'Pennock Projects',
+  title: 'Pennock Projects',
+  description: 'Pennock Projects is a software engineering blog about front end frameworks, backend services, databases, and AI architecture by John Pennock',
+  rootUrl: "https://blog-mu-vert-29.vercel.app",
+  robots: 'index, follow',
+  copyright: '© 2024 by John Pennock',
+  type: 'article',
+  image2x1: '/images/PennockProjectsFB.jpg',
+  image2x1Width: 1200,
+  image2x1Height: 600,
+  image1x1: '/images/PennockProjectsLogo.png',
+  image1x1Width: 800,
+  image1x1Height: 800,
+  imageAlt: 'Pennock Projects Logo',
+  twitterCard: 'summary_large_image',
+  twitterSiteHandle: '@PennockProjects',
+  twitterCreatorHandle: '@JohnPennock'
+}
+
+
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - John Pennock` : 'John Pennock';
+    return (titleChunk && (titleChunk != socialDefaults.title)) ? `${titleChunk} - ${socialDefaults.title}` : socialDefaults.title;
   },
   htmlAttrs: {
     lang: 'en'
@@ -9,11 +30,31 @@ useHead({
   link: [
     {
       rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico'
+    },
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
       type: 'image/png',
-      href: '/favicon.png'
-    }
-  ],
-  link: [
+      href: '/apple-touch-icon.png'
+    },
+    {
+      rel: 'icon',
+      sizes: '32x32',
+      type: 'image/png',
+      href: '/favicon-32x32.png'
+    },
+    {
+      rel: 'icon',
+      sizes: '16x16',
+      type: 'image/png',
+      href: '/favicon-16x16.png'
+    },
+    {
+      rel: 'manifest',
+      href: '/site.webmanifest'
+    },
     {
       rel: 'preconnect',
       href: 'https://fonts.googleapis.com'
@@ -25,6 +66,17 @@ useHead({
     }
   ]
 })
+
+// allow children components readonly access to social defaults.
+provide("socialDefaults", socialDefaults);
+
+// Setting Global SEO on each page
+useSeoMeta({
+  robots: socialDefaults.robots,
+  copyright: socialDefaults.copyright
+})
+
+
 </script>
 
 <template>

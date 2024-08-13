@@ -1,12 +1,13 @@
 ---
 title: Intro to Vue 3 Slots
-topic: Vue
 description: How slots are used in Vue 3
-publishedAt: 2024-05-23 10:00:00
+topic: Vue
 isToc: true
+createDate: 2024-05-23 10:00:00
+createAuthor: John Pennock
 ---
 
-A blog post for understanding the basics of Vue 3 slots.  See [Vue 3 Slot cheat sheet](/sheets/vueslots)
+A blog post for understanding the basics of Vue 3 slots.  See [Vue 3 Slot examples](/examples/vueslots)
 
 ## What is a Slot?
 

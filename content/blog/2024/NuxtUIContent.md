@@ -1,16 +1,12 @@
 ---
 title: NuxtUI with NuxtContent
-topic: NuxtUI
 description: A post about using Nuxt NuxtUI module with components such as VerticalNavigation and Dropdown with NuxtContent module components such as tailwind typographic prose, ContentRenderer and ContentNavigation
-publishedAt: 2024-05-16 10:00
+topic: NuxtUI
 isToc: true
-tags:
-  - Vue
-  - Nuxt
-  - NuxtUI
-  - NuxtContent
-  - JS
-  - HTML
+createDate: 2024-05-16
+createAuthor: John Pennock
+image: /images/NuxtUILogo.png
+imageAlt: NuxtUI Logo
   
 ---
 
@@ -366,5 +362,26 @@ function flattenOnce(docLinks) {
       </template>
     </ContentDoc>
   </article>
+</template>
+```
+
+## Render MD from an API
+
+From this stack overflow.   
+
+```vue
+<script setup>
+import { parseMarkdown } from '~/utils/parseMarkdown'
+
+const result = ref(null)
+const loadMarkdown = async () => {
+  const data = await $fetch('https://example.com/page.md')
+  result.value = await parseMarkdown(data)
+}
+loadMarkdown()
+</script>
+
+<template>
+  <ContentRendererMarkdown :value="result" v-if="result" />
 </template>
 ```

@@ -3,7 +3,7 @@
     <header class="flex justify-between items-start sm:items-center">
       <div class="flex items-center sm:space-x-12">
         <div class="hidden sm:block">
-          <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-gray-200 dark:hover:bg-gray-800">John Pennock</NuxtLink>
+          <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-gray-200 dark:hover:bg-gray-800">Pennock Projects</NuxtLink>
         </div>
         <TopMenu />
       </div>

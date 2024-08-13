@@ -2,13 +2,13 @@
   <nav class="font-mono">
     <ul class="flex flex-col sm:flex-row md:space-x-4">
       <li class="sm:hidden">
-        <NuxtLink to="/" class="link">John Pennock</NuxtLink>
+        <NuxtLink to="/" class="link">Pennock Projects</NuxtLink>
       </li>    
       <li>
         <NuxtLink to="/projects" class="link">Projects</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/sheets" class="link"><span class="sm:hidden lg:inline">Cheat </span>Sheets</NuxtLink>
+        <NuxtLink to="/examples" class="link">Examples</NuxtLink>
       </li>
       <li>
         <NuxtLink to="/blog" class="link">Blog</NuxtLink>

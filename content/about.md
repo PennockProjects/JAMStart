@@ -5,19 +5,28 @@ description: "John Pennock's software development blog and portfolio"
 
 # About
 
-I'm a software engineer currently incubating AI, Elder Tech, and Nuxt front ends. I'm originally from Idaho Falls, Idaho and currently work in the Seattle area, Washington in the United States. My career has encompassed software engineering, program management, and startup founder for Microsoft, startup ArcZap, and Wizards of the Coast. In various roles I have designed and engineered software at many levels of the services, backend servers, front end web, applications, and games stack. I love gaming 🐉, personal finance 💸 and history 🏛️.
+::MonkInset{size = 'lg'}
+![John Pennock](/images/johnpennockbiz.jpg)
+::
+
+My name is John Pennock and I'm a software engineer currently incubating using AI to improve health care for seniors and elders, colloquially called **Elder Inteligence**. In addition to learning about AI, I'm also learning Nuxt and Vue 3 as javascript frameworks for creating front ends and backend services. I work from Sammamish, Washington (outside Seattle) and am originally from Idaho Falls, Idaho in the United States. My career has encompassed software engineering, program management, and startup founder. In my various roles I have designed and engineered software at many levels of the services, backend servers, front end web, applications, and game stacks. I love gaming 🐉, personal finance 💸 and history 🏛️.
 
 ## Incubation Projects
 
 My current incubation projects are:
 
-- John Pennock [Portfolio](http://www.pennocks.net) - This site.  My web presence site that blogs about software development. My key learnings from this project are to design, develop, and document a repeatable site framework that uses Nuxt[^1], Markdown, and Static-Site generation for cheap and fast hosting of my own blog.
-- Greek and Roman Mythology [Minimyth](http://minimyth.com) - My site about mythology as represented on ancient coins. I'm passionate about the topic, but my key incubation learnings from this project are to explore a collection of Mongo NoSQL documents, with a custom schema and content images and relate them to cloud search.
-- Elder Tech - No site yet, but exploring how to leverage AI for senior citizen to provide their medical history, information about recent advances, and drug interactions.
+- [Pennock Projects](http://www.pennocks.net) - This site.  My web presence site that blogs about software development. My key learnings from this project are to design, develop, and document a repeatable site framework that uses Nuxt[^1], Markdown, and Static-Site generation for cheap and fast hosting of my own blog.
+- [Minimyth](http://minimyth.com) - My site about Greek and Roman mythology as represented on ancient coins. I'm passionate about the topic, but my key incubation learnings from this project are to explore a collection of Mongo NoSQL documents, with a custom schema and content images and relate them to cloud search.
+- **Elder Intelligence** - No site yet.  Researching how to leverage AI for senior citizens to synthensize their medical history, information about recent advances, medical procedures, medical plan coverages, drug interactions, and efficient cost expenditure
 
 [^1]: [nuxt](http://nuxt.com)
 
-## Previous Jobs and Projects
+## Previous Employers
+- Wizards of the Coast/Hasbro Gaming
+- ArcZap startup
+- Microsoft
+
+## Previous Projects
 - Game servers and services for Wizards of the Coast Dungeons and Dragon Unreal Engine (v5) virtual table top game
 - API services and operations for Wizards of the Coast Magic: the Gathering Arena
 - Founder and CTO for ArcZap Group and Calendar startup
@@ -25,6 +34,10 @@ My current incubation projects are:
 - Networking Architecture for Microsoft Windows Media Center
 - Program Management for Microsoft GameVoice voice over IP
 - Device Drivers for SideWinder Gaming Devices, Microsoft Mouse, and the Natural Keyboard
+
+## Education
+- Bachelor of Science (B.S.) in Computer and Electrical Engineering from Brigham Young University
+- Web and Mobile Development certificates from Bellevue College
 
 ## Tools and Tech Stack
 
@@ -37,6 +50,6 @@ What tools and software did I use to build this blog?
 
 Inspired by Udemy [course](https://www.udemy.com/course/master-nuxt-full-stack-complete-guide/learn/lecture/40391596#overview) *Unlock Nuxt 3 & Vue Mastery: Build a Markdown Blog-Portfolio and Supabase Finance Tracker*
 
-## Contact me at
-- Email [pennockprojects at gee mail dot com](mailto:pennockprojects@gmail.com)
-- Twitter [@pennockprojects](https://twitter.com/PennockProjects){:target="_blank"}
+## Contact me
+- [Email](mailto:pennockprojects@gmail.com)
+- [Twitter @pennockprojects](https://twitter.com/PennockProjects){:target="_blank"}

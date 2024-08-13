@@ -10,7 +10,7 @@ const props = defineProps({
   },
   sort: {
     type: Object,
-    default: {publishedAt: -1}
+    default: {createDate: -1}
   }
 })
 const { data } = await useAsyncData(
@@ -18,7 +18,7 @@ const { data } = await useAsyncData(
     () => {
       const query = queryContent(props.contentRoot)
         .where({_path: { $ne: '/'+props.contentRoot} })
-        .only(['_path', 'title', 'topic', 'publishedAt'])
+        .only(['_path', 'title', 'topic', 'createDate'])
         .sort(props.sort)
 
       if (props.limit) {
@@ -36,9 +36,15 @@ const posts = computed(() => {
   let lastYear = null;
 
   for(const post of data.value) {
-    const year = new Date(post.publishedAt).getFullYear()
-    post.isDisplayYear = (year != lastYear)
-    post.displayYear = year
+    const createDate = new Date(post.createDate)
+    const year = createDate.getFullYear()
+    const month = createDate.getMonth() + 1
+    const pMonth = month.toString().padStart(2,"0");
+    const day = createDate.getDate()
+    const pDay = day.toString().padStart(2,"0");
+    post.monthDay = `${pMonth}-${pDay}`
+    post.monthDayYear = `${pMonth}-${pDay}-${year}`
+    post.isDisplayYear = (year != lastYear) ? true : false
     lastYear = year
     result.push(post)
   }
@@ -47,25 +53,24 @@ const posts = computed(() => {
 // console.log(posts)
 </script>
 
+<!-- :class="{'text-white dark:text-gray-900 group-hover:text-gray-100 dark:group-hover:text-gray-800': !post.isDisplayYear, 'text-gray-400 dark:text-gray-500': post.isDisplayYear}" -->
+
 <template>
   <slot :posts="posts">
     <section class="not-prose font-mono mr-4 md:mr-16">
-      <div class="text-gray-400 text-sm grid grid-cols-7">
-        <div class="col-span-1">date</div>
-        <div class="col-span-6 md:col-span-5">title</div>
-        <div class="hidden md:block md:col-span-1">topic</div>
+      <div class="text-gray-400 text-sm grid grid-cols-9">
+        <div class="col-span-2">date</div>
+        <div class="col-span-7 md:col-span-5">title</div>
+        <div class="hidden md:block md:col-span-2">topic</div>
       </div>
       <ul>
         <li v-for="post in posts" :key="post._path">
-          <NuxtLink :to="post._path" class="grid grid-cols-7 hover:bg-gray-100 dark:hover:bg-gray-800">
-            <div 
-              class="col-span-1"
-              :class="{'text-white dark:text-gray-900 group-hover:text-gray-100 dark:group-hover:text-gray-800': !post.isDisplayYear, 'text-gray-400 dark:text-gray-500': post.isDisplayYear}"
-            >
-              {{  post.displayYear }}
+          <NuxtLink :to="post._path" class="grid grid-cols-9 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <div class="col-span-2 text-gray-400 dark:text-gray-500">
+              {{ post.isDisplayYear ? post.monthDayYear : post.monthDay }}
             </div>
-            <div class="col-span-6 md:col-span-5">{{ post.title }}</div>
-            <div class="hidden md:block md:col-span-1">{{ post.topic }}</div>
+            <div class="col-span-7 md:col-span-5">{{ post.title }}</div>
+            <div class="hidden md:block md:col-span-2">{{ post.topic }}</div>
           </NuxtLink>
         </li>
       </ul>

@@ -19,7 +19,7 @@ defineProps({
     <li v-for="link in links" :key="link.id">
       <NuxtLink 
         :to="{path: route.path, hash: `#${link.id}`}"
-        :class="{ 'ml-4': level, 'text-green-600 dark:text-green-400': activeId === link.id}"
+        :class="{ 'ml-4 text-sm': level, 'text-green-600 dark:text-green-400': activeId === link.id}"
       >
         {{  link.text }}
       </NuxtLink>
