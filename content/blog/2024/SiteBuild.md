@@ -3,10 +3,10 @@ title: Site Build Notes
 description: Developer notes about building and modules used to build this site
 topic: Development
 isToc: true
-version: 1.1
+version: 1.2
 createDate: 2024-05-06 
 createAuthor: John Pennock
-editDate: 2024-07-31
+editDate: 2024-09-25 
 editAuthor: John Pennock
 image: '/images/constructionsite.jpg'
 imageAlt: A large building construction site
@@ -21,7 +21,7 @@ An actual photo showing how the Pennock Projects website was built
 We will discuss how the general components and modules used to build this site.
 
 ## Resources
-I started with the excellent Udemy course by Piotr Jura [Unlock Nuxt 3 & Vue Mastery: Build a Markdown Blog-Portfolio and Supabase Finance Tracker here](https://www.udemy.com/course/master-nuxt-full-stack-complete-guide/learn/lecture/40391596#overview) and studied the [GitHub source final](https://github.com/piotr-jura-udemy/nuxt-course) and then like all developers before I built from there.
+I started with the excellent Udemy course by Piotr Jura [Unlock Nuxt 3 & Vue Mastery: Build a Markdown Blog-Portfolio and Supabase Finance Tracker here](https://www.udemy.com/course/master-nuxt-full-stack-complete-guide/learn/lecture/40391596#overview) and studied the [GitHub source final](https://github.com/piotr-jura-udemy/nuxt-course) and then like all developers before me, I built from there.
 
 #### Definitions
 - *Server Side Rendering - SSR* - Server runs the JavaScript, fetches data, modifies the HTML document *before* sending to the browser to render.
@@ -49,10 +49,10 @@ npx nuxi@latest init <project name>
 - `server` - server-side code
 - `pages` - Website page components
 - `components` - all the components in your application - auto imported by Nuxt from here
+- `components/content` - Vue components used in content files
 - `layouts` - common layouts like header, every-single page
 - `composables` - small pieces of reusable code or components
-- `content` - directory of markdown article files for Content Doc
-- `content/components` - Vue components used in content files
+- `content` - blog, code, and ops markdown article files
 - `.nuxt`, `node_modules` - generative by Nuxt and NPM
 
 #### Nuxt Routing
@@ -72,7 +72,7 @@ A page can belong to a Nuxt Layout which contains the hierarchical structure. Th
     <NuxtPage />
   </NuxtLayout>
 ```
-You assign custom layouts for a page in the following three ways (using the custom `another.vue` layout in the examples)
+You assign custom layouts for a page in the following three ways (using the custom `another.vue` layout in the `code` directory)
 1. override globally in the `<NuxtLayout :name="another"` element and name in `app.vue`
 2. On the page in script setup use Nuxt `definePageMeta` with the name of the layout in the `layout` property, like this.
 ```js

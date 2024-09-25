@@ -2,7 +2,7 @@
 title: FigureCaption Component
 description: The FigureCaption custom component has two slots to take default content into a <figure></figure> element and a caption content into a <figcaption></figcaption> element like you would find in an article.
 topic: NuxtContent
-isToc: true
+isToc: false
 createDate: 2024-08-01
 createAuthor: John Pennock
 image: '/images/FigureCaptionExample.JPG'
@@ -27,7 +27,13 @@ The Figure with Caption block component example renders an image as a full block
 - Conditional Slot `v-if="$slots.caption"`
 - Combinator Selector in Scoped Style `:deep(img)` 
 
+## Code
 ```vue
+<!--
+FigureCaption - a Nuxt.js NuxtContent component from Pennock Projects, MIT License, Copyright (c) 2024 John Pennock
+version: 1.0
+-->
+
 <template>
   <div class="figure-all">
     <figure class="figure-image not-prose">
@@ -43,7 +49,7 @@ The Figure with Caption block component example renders an image as a full block
 
 <style scoped>
 .figure-all {
-  @apply border border-dashed dark:border-gray-700 p-2 m-0 w-full
+  @apply border border-dashed dark:border-gray-800 p-2 m-0 w-full
 }
 
 .caption-container {
@@ -51,10 +57,11 @@ The Figure with Caption block component example renders an image as a full block
 }
 
 .figure-image :deep(img) {
-  @apply mx-auto max-h-80 lg:max-h-96 max-w-60 sm:max-w-80 md:max-w-none
+  max-height: 80%;
+  max-width: 100%;
+  @apply mx-auto
 }
 </style>
-
 ```
 
 Markdown Text

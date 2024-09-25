@@ -1,13 +1,13 @@
 ---
 title: Emojis - Part 2
-description: Emoji examples for NuxtContent Markdown - part 2
+description: Emojis for NuxtContent Markdown - part 2
 topic: Markdown
 isToc: true
 createDate: 2023-06-22 11:00:00
 createAuthor: John Pennock
 ---
 
-[Markdown Emojis - Part 1](/examples/emoji1)
+[Markdown Emojis - Part 1](/code/emoji1)
 
 ## Transport
 |    Markdown          |   Emoji    |

@@ -1,6 +1,6 @@
 ---
 title: Vue 3 Slots
-description: A examples guide for Vue 3 Slots
+description: A cheat sheet for Vue 3 Slots
 topic: Vue
 isToc: true
 createDate: 2023-05-23

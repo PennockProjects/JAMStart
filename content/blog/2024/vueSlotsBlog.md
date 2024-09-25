@@ -7,7 +7,7 @@ createDate: 2024-05-23 10:00:00
 createAuthor: John Pennock
 ---
 
-A blog post for understanding the basics of Vue 3 slots.  See [Vue 3 Slot examples](/examples/vueslots)
+A code example about [Vue 3 Slots](/code/vueslots)
 
 ## What is a Slot?
 

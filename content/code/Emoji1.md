@@ -1,17 +1,17 @@
 ---
 title: Emojis - Part 1
-description: Emoji examples for NuxtContent Markdown - part 1
+description: Emojis for NuxtContent Markdown - part 1
 topic: Markdown
 isToc: true
 createDate: 2023-06-22 10:00:00
 createAuthor: John Pennock
 ---
 
-[Markdown Emojis - Part 2](/examples/emoji2)
+[Markdown Emojis - Part 2](/code/emoji2)
 
 Examples that show markdown codes for including emojis.  
 It was derived from the following sites:
-- [ikatyang emoji examples](https://github.com/ikatyang/emoji-cheat-sheet?tab=readme-ov-file)
+- [ikatyang emoji code](https://github.com/ikatyang/emoji-cheat-sheet?tab=readme-ov-file)
 - [unicode emojis](https://unicode.org/emoji/charts/full-emoji-list.html)
 - [GitHub Emoji API](https://api.github.com/emojis)
 

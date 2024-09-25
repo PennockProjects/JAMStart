@@ -4,7 +4,7 @@ description: Examples and some developer notes on creating Vue.js Nuxt.js NuxtCo
 topic: Development
 createDate: 2024-06-03
 createAuthor: John Pennock
-isToc: true
+isToc: false
 image: '/images/CustomComponentsAs2PuzzlePieces.jpg'
 imageAlt: Custom Component as Puzzle Pieces
 ---
@@ -14,11 +14,11 @@ Vue.js NuxtContent Custom Components are `.vue` files which are used to add cust
 ```
 
 
- I have developed a couple of NuxtContent Custom Component that for examples or use (shared for use under the MIT license).
+Here are complete examples of NuxtContent Custom Components I developed (shared for use under the MIT license).
 
 Pennock Projects NuxtContent Custom Components
-- [MonkInset](/examples/nuxtcontentmonkinset)
-- [FigureCaption](/examples/nuxtcontentfigurecaption)
+- [MonkInset](/code/nuxtcontentmonkinset)
+- [FigureCaption](/code/nuxtcontentfigurecaption)
 
 See this blog post on [usage](nuxtcontentcomponentusage)
 

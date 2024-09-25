@@ -1,6 +1,6 @@
 ---
 title: Git Cheat Sheet
-description: A examples to using Git
+description: A Git cheat sheet and snippets
 topic: Git
 isToc: true
 createDate: 2023-05-27

@@ -19,7 +19,7 @@ My current incubation projects are:
 - [Minimyth](http://minimyth.com) - My site about Greek and Roman mythology as represented on ancient coins. I'm passionate about the topic, but my key incubation learnings from this project are to explore a collection of Mongo NoSQL documents, with a custom schema and content images and relate them to cloud search.
 - **Elder Intelligence** - No site yet.  Researching how to leverage AI for senior citizens to synthensize their medical history, information about recent advances, medical procedures, medical plan coverages, drug interactions, and efficient cost expenditure
 
-[^1]: [nuxt](http://nuxt.com)
+[^1]: [nuxt official site](http://nuxt.com)
 
 ## Previous Employers
 - Wizards of the Coast/Hasbro Gaming
