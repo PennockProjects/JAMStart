@@ -14,14 +14,9 @@ const props = defineProps({
   }
 })
 
-onMounted(() => {
-  console.log("onMounted")
-})
-
 const { data } = useAsyncData(
   props.contentRoot + '-list',
   () => {
-    console.log("haveData")
     const query = queryContent(props.contentRoot)
       .where({_path: { $ne: '/'+props.contentRoot} })
       .only(['_path', 'title', 'topic', 'createDate'])
