@@ -11,3 +11,4 @@
 {"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q::monk-inset{size='xs'} Xg :: ::monk-inset{size='xs' float='right'} Q ::\\E$"}
 {"rule":"UNLIKELY_OPENING_PUNCTUATION","sentence":"^\\Q::monk-inset{size='sm'} S :: ::monk-inset{size='sm' float='right'} Wy :: Cillum esse pariatur et culpa amet.\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QAd cupidatat commodo quis quis consequat.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QS3 Bucket Name\nName the S3 Bucket exactly the same as your custom Domain name, i.e. for 'pennocks.net' custom domain, create a bucked named \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

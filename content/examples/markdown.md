@@ -5,7 +5,7 @@ topic: Markdown
 isToc: true
 createAuthor: John Pennock
 createDate: 2023-05-13
-image: \images\MarkdownFileLogo.png
+image: /images/MarkdownFileLogo.png
 imageAlt: Markdown File Logo
 ---
 

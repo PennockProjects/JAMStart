@@ -13,21 +13,29 @@ const props = defineProps({
     default: {createDate: -1}
   }
 })
-const { data } = await useAsyncData(
-    props.contentRoot + '-list',
-    () => {
-      const query = queryContent(props.contentRoot)
-        .where({_path: { $ne: '/'+props.contentRoot} })
-        .only(['_path', 'title', 'topic', 'createDate'])
-        .sort(props.sort)
 
-      if (props.limit) {
-        query.limit(props.limit)
-      }
+onMounted(() => {
+  console.log("onMounted")
+})
 
-      return query.find()
+const { data } = useAsyncData(
+  props.contentRoot + '-list',
+  () => {
+    console.log("haveData")
+    const query = queryContent(props.contentRoot)
+      .where({_path: { $ne: '/'+props.contentRoot} })
+      .only(['_path', 'title', 'topic', 'createDate'])
+      .sort(props.sort)
+
+    if (props.limit) {
+      query.limit(props.limit)
     }
+
+    return query.find()
+  }
 )
+
+
 
 const posts = computed(() => {
   if(!data.value) return []
