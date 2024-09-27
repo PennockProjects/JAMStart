@@ -1,5 +1,5 @@
 ---
-title: Examples
+title: Code
 description: Code snippets and cheat sheets for development tech stacks
 topic: General
 ---
@@ -8,7 +8,7 @@ topic: General
 :page_with_curl:
 ::
 
-This is a set of cheat sheets, snippets, files, or guides I use to remember key concepts about coding and technology stacks.
+This is a set of cheat sheets, snippets, files, and guides to remember key concepts about coding, operations and technology stacks.
 
 ::Examples
 
