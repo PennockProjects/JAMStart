@@ -21,7 +21,7 @@ Use [MX Toolbox Supertool](https://mxtoolbox.com/DnsLookup.aspx) for quick check
 
 ## Troubleshooting
 
-Below are some troubleshooting steps I took and some learnings I made when I encountered DNS issues when deploying my static site generated blog site (this site) to an S3 bucket and using a Route 53 custom domain. I had followed serveral YouTube guides, including ones from AWS, on how to connect a custom domain to my S3 bucket site.  I made it to the stage where my site was publically hosted but only accessiable via the S3 public link and not my custom domain.  
+Below are some troubleshooting steps I took and some learnings I made when I encountered DNS issues when deploying my static site generated blog site (this site) to an S3 bucket and using a Route 53 custom domain. I had followed serveral YouTube guides, including ones from AWS, on how to connect a custom domain to my S3 bucket site.  I was at the stage where my site was publically hosted and accessiable via the direct S3 public link but was not accessible at my custom domain name.
 
 ### The problem
 
@@ -62,10 +62,12 @@ However, the root problem remained unaddressed.  And after creating the certific
 ### Troubleshooting - Using External DNS tools
 As my new certificate was still 'pending' I finally realized that my custom domain could not be reached publically, at all.
 
-I used [MX Toolbox Supertool](https://mxtoolbox.com/DnsLookup.aspx) to validate public access and sure enough the custom domain was not on the internet name servers.
+I used [MX Toolbox Supertool](https://mxtoolbox.com/DnsLookup.aspx) to validate public access and sure enough, my custom domain was not in any of the internet name servers.
+
+I probably should have started with this troubleshooting step.
 
 ## Root Problem
-After staring at my hosted zone NS record and validating those name servers were official and real.  A couple of searches revealed that you need to add the name servers to the registered domains as well.  
+Next, I doubled checked my hosted zone NS record. I had assumed that was all I needed. I validated the AWS name servers there were official and real. With a couple of stackoverflow queries I found a reference to the registered domain needed the name servers in addition to the NS record.
 
 ::figure-caption
 ![Route 53 Dashboard showing Registered Domain option](/images/blog/Route53RegisteredDomainsChoice.jpg)
@@ -73,11 +75,11 @@ After staring at my hosted zone NS record and validating those name servers were
 Registered Domain option vs. Hosted Zone
 ::
 
-When I looked at my registered custom domain, it had indeed had two name servers, but they were GoDaddy name servers! I used the MX toolbox to determine the owner as my only information was IP addresses of ns67.domaincontrol.com and ns68.domaincontrol.com. I had originally registered the custom domain at GoDaddy and transfered it to AWS. The GoDaddy Name Servers came along for the ride. If I had registered the domain at AWS those name servers would have been correct to start with.
+When I looked at my registered custom domain, it had already had two name servers assigned but I didn't recognize them - ns67.domaincontrol.com and ns68.domaincontrol.com. I used the MX toolbox to examine them, and it turns out that they are GoDaddy name servers! Finally, the root problem was found. I had originally registered the custom domain at GoDaddy and transfered it to AWS. The GoDaddy Name Servers came along for the ride. If I had registered the domain using AWS those name servers would have been correct to start with.
 
 ## Solution
 
-So I just added my four AWS name servers from the hosted zone NS record
+So I just added my four AWS name servers from the hosted zone NS record to my registered domain name servers.
 ::figure-caption
 ![Route 53 Registered Domain Name Servers](/images/blog/Route53RegisteredDomainsNameServer.jpg)
 #caption
@@ -85,10 +87,13 @@ Registred Domain needs AWS Name Servers!
 ::
 
 ### Learning - Update Registered Domain
-And a few minutes later I could see my site in the browser and miraculously also the certificate I created was finally issued.
+
 ::MonkInset{size = 'lg' float = 'right'}
 ![An AWS Certificate successfully issued](/images/blog/AWSCertificateIssued.jpg)
 ::
+
+And a few minutes later I could see my site in the browser and miraculously also the certificate I created was finally issued.
+
 
 ## Unresolved Learning
 I still don't know why my hosted zone and my registered domain have duplicate name servers.  What's the point of the hosted zone NS record?
