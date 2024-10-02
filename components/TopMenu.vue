@@ -5,10 +5,13 @@
         <NuxtLink to="/" class="link">Pennock Projects</NuxtLink>
       </li>    
       <li>
-        <NuxtLink to="/projects" class="link">Projects</NuxtLink>
+        <NuxtLink to="/code" class="link">Code</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/code" class="link">Code</NuxtLink>
+        <NuxtLink to="/ops" class="link">Ops</NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/gitprojects" class="link">Git</NuxtLink>
       </li>
       <li>
         <NuxtLink to="/blog" class="link">Blog</NuxtLink>

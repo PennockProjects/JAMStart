@@ -55,7 +55,7 @@ const sizeDefaults = {
     pMarginTop: '0.3em'
   },
   md: {
-    divMarginContent: '0.3em',
+    divMarginContent: '0.4em',
     size: 'md',
     imgMaxHeight: '6em',
     imgMaxWidth: '6em',
@@ -66,7 +66,7 @@ const sizeDefaults = {
   },
   lg: {
     size: 'lg',
-    divMarginContent: '0.4em',
+    divMarginContent: '0.6em',
     imgMaxHeight: '9em',
     imgMaxWidth: '9em',
     pFontSize:'3em',
@@ -76,7 +76,7 @@ const sizeDefaults = {
   },
   xl: {
     size: 'xl',
-    divMarginContent: '0.5em',
+    divMarginContent: '0.8em',
     imgMaxHeight: '12em',
     imgMaxWidth:  '12em',
     pFontSize: '5em',

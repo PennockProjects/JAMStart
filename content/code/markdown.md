@@ -1,5 +1,5 @@
 ---
-title: Markdown Examples
+title: Markdown Cheat Sheet
 description: Examples and snippets for authoring using Markdown
 topic: Markdown
 isToc: true
@@ -8,13 +8,6 @@ createDate: 2023-05-13
 image: /images/MarkdownFileLogo.png
 imageAlt: Markdown File Logo
 ---
-
-#### Other Cheat Sheets
-- [Markdown Cheat Sheet](https://markdownlivepreview.com/){target="_blank"}
-- [Markdown Extended Syntax](https://www.markdownguide.org/extended-syntax/){target="_blank"}
-
-- [Markdown Syntax Highlighting - GitHub](https://github.com/github-linguist/linguist/blob/master/lib/linguist/languages.yml){target="_blank"}
-- [Markdown NuxtContent Usage](https://content.nuxt.com/usage/markdown){target="_blank"}
 
 ## Headers
 
@@ -266,4 +259,13 @@ ___
 
 ```
 
+## Other Cheat Sheets
+- [Markdown Cheat Sheet](https://markdownlivepreview.com/){target="_blank"}
+- [Markdown Extended Syntax](https://www.markdownguide.org/extended-syntax/){target="_blank"}
+
+- [Markdown Syntax Highlighting - GitHub](https://github.com/github-linguist/linguist/blob/master/lib/linguist/languages.yml){target="_blank"}
+- [Markdown NuxtContent Usage](https://content.nuxt.com/usage/markdown){target="_blank"}
+
 ___
+
+#### Footnotes

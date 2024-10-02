@@ -1,13 +1,22 @@
 <script setup>
+const props = defineProps({
+  contentRoot: {
+    type: String,
+    default: 'code'
+  }
+})
 const sort = {topic: 1};
+
+const contentRoot = (props.contentRoot == 'code' || props.contentRoot == 'ops' ) ? props.contentRoot : 'code'
+
 </script>
 
 <template>
-  <PostList v-slot="{posts}" content-root="code" :sort="sort">
+  <PostList v-slot="{posts}" :content-root="contentRoot" :sort="sort">
     <section class="border border-r-2 border-t-0 border-l-0 border-b-0 not-prose font-mono">
       <div class=" text-gray-400 text-sm grid grid-cols-10">
         <div class="col-span-3 md:col-span-2">Topic</div>
-        <div class="col-span-7 md:col-span-8">Examples</div>
+        <div class="col-span-7 md:col-span-8">Code</div>
       </div>
       <ul>
         <li v-for="post in posts" :key="post._path">

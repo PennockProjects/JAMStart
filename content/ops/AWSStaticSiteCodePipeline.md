@@ -1,22 +1,22 @@
 ---
-title: CI/CD GitHub AWS S3 Custom Domain
+title: CI/CD GitHub AWS S3 Site Custom Domain
 description: Creating AWS infrastructure and pipeline to automatic deploy a GitHub Nuxt 3 Static Rendered site to an S3 bucket with a fully qualified custom DNS 
-topic: Ops
+topic: CICD
 isToc: true
 createAuthor: John Pennock
 createDate: 2023-09-13
-image: /images/GitHubAWSCodePipeline.png
-imageAlt: GitHub logo + AWS CodePipeline Logo
+image: /images/GitHubAWSCodePipeline.jpg
+imageAlt: GitHub logo and AWS CodePipeline Logos
 ---
 
 ::FigureCaption
-![GitHub logo + AWS CodePipeline Logo](/images/GitHubAWSCodePipeline.png)
+![GitHub logo + AWS CodePipeline Logo](/images/GitHubAWSCodePipeline.jpg)
 
 #caption
-CI/CD for a Nuxt 3 Static Site in GitHub to AWS S3 and Route 53
+CI/CD for a Static Site in GitHub to AWS S3 and Route 53
 ::
 
-To create an CI/CD of a Nuxt static site from a GitHub repository to AWS infrasture for a custom domain, create and configure the following AWS infrastructure.
+A CI/CD pipeline that will automatically build and deploy a Nuxt static site from a push to a GitHub repository, build the site, and deploy to AWS infrasture for a custom domain, requires the following steps.
 
 1. Custom Domain
 2. AWS S3 bucket configured for Static Site Hosting
