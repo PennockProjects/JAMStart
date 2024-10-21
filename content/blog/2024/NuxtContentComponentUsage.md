@@ -29,7 +29,7 @@ In order to use Pennock Project NuxtContent custom components 'out of the box' t
 - Tailwind Typographic Prose module
 
 ### NuxtContent Module
-The [Nuxt Content](https://nuxt.com/modules/content) module for a Nuxt.js project allows you to write beautiful web pages and articles using [Markdown](/code/markdown). Markdown is a text file syntax that can be quickly converted into HTML with headers, text, images, etc. A Markdown text file is small, readable on its own, and quick to write in any text editor. The NuxtContent module reads the Markdown files and converts them to HTML.
+The [Nuxt Content](https://nuxt.com/modules/content) module for a Nuxt.js project allows you to write beautiful web pages and articles using [Markdown](/contenttips/markdown). Markdown is a text file syntax that can be quickly converted into HTML with headers, text, images, etc. A Markdown text file is small, readable on its own, and quick to write in any text editor. The NuxtContent module reads the Markdown files and converts them to HTML.
 
 ### Tailwind CSS Typographic Prose
 The Tailwind CSS Typographic Prose module automatically styles common HTML elements for readability on the web. By adding the `prose` class to the parent element all the children elements are beautifully styled. This is used in combination with the NuxtContent converted files for a seamless content management authoring system. See this [Tailwind Typographic blog post](/blog/2024/sitebuild#tailwind-css) for installation of the module and issues I've encountered with it.

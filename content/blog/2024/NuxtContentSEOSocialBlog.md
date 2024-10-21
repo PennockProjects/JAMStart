@@ -20,7 +20,7 @@ imageAlt: A mouse pointer hovering over a tweet button
 A System for Content Authoring for SEO and Social
 ::
 
-For an example see [NuxtContent SEO social code](/code/nuxtcontentseosocialsheet)
+For an example see [NuxtContent SEO social code](/contenttips/nuxtcontentseosocialsheet)
 
 Each blog post developed should be tagged with specific data so that it will look inviting in search results and/or on social media. The system I developed enables a content author to add that information to the source Markdown file, so that each blog post, article or page authored will have appropriate tags and customized to the page content.
 
@@ -46,7 +46,7 @@ head:
 --- 
 ```
 
-> For a more complete example see [Examples Direct Variables](/code/nuxtcontentseosocialsheet#direct-front-matter-vars)
+> For a more complete example see [Examples Direct Variables](/contenttips/nuxtcontentseosocialsheet#direct-front-matter-vars)
 
 ### Front-matter Injection
 Front-matter variables declared at the top can be symbolically inserted into the Markdown content by using `{{ <variable key> }}`.  For example, if you have a front-matter variable defined as `name: "Mohonri Moriancumur"` you could inject it in the body with `{{ name }}`.  This would insert the full name `Mohonri Moriancumur` everywhere you did this.
