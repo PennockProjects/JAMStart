@@ -11,6 +11,9 @@
         <NuxtLink to="/ops" class="link">Ops</NuxtLink>
       </li>
       <li>
+        <NuxtLink to="/contenttips" class="link">Content</NuxtLink>
+      </li>      
+      <li>
         <NuxtLink to="/gitprojects" class="link">Git</NuxtLink>
       </li>
       <li>

@@ -57,6 +57,8 @@ const onDocReady = (doc) => {
   twitterImageAlt.value = doc.twitterImageAlt || doc.imageAlt || socialDefaults.imageAlt
   twitterCard.value = doc.twitterCard || socialDefaults.twitterCard
   twitterCreatorHandle.value = doc.twitterCreatorHandle || socialDefaults.twitterCreatorHandle
+
+  // console.log("onDocReady, twitterImage.value", twitterImage.value, twitterImageAlt.value)
 }
 
 onMounted(() => {

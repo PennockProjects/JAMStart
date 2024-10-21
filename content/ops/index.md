@@ -8,7 +8,7 @@ topic: General
 :robot:
 ::
 
-This is a set of recipes, cheat sheets, and validation for infrasture and operating live services. Topics include analytics, CI/CD, command line, alerts, etc.
+This is a set of recipes, cheat sheets, and validation for infrastructure and operating live services. Topics include analytics, CI/CD, command line, alerts, etc.
 
 ::Articles{contentRoot="ops"}
 

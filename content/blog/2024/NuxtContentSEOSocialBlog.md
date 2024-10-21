@@ -2,8 +2,8 @@
 title: SEO and Social
 ogTitle: SEO Open Graph Tags
 twitterTitle: SEO Twitter Tags
-description: A system for Nuxt.js NuxtContent front-matter vars, HTML <head> tags for effective SEO Twitter and open graph social posting
-ogDescription: A system for Nuxt.js NuxtContent front-matter vars, HTML <head> tags for effective SEO open graph social posting
+description: A system for Nuxt.js NuxtContent front-matter variables, HTML <head> tags for effective SEO Twitter and open graph social posting
+ogDescription: A system for Nuxt.js NuxtContent front-matter variables, HTML <head> tags for effective SEO open graph social posting
 twitterDescription: A system for Nuxt.js NuxtContent HTML <head> tags for effective SEO twitter social posting
 topic: Development
 isToc: true
@@ -46,7 +46,7 @@ head:
 --- 
 ```
 
-> For a more complete example see [Examples Direct Vars](/code/nuxtcontentseosocialsheet#direct-front-matter-vars)
+> For a more complete example see [Examples Direct Variables](/code/nuxtcontentseosocialsheet#direct-front-matter-vars)
 
 ### Front-matter Injection
 Front-matter variables declared at the top can be symbolically inserted into the Markdown content by using `{{ <variable key> }}`.  For example, if you have a front-matter variable defined as `name: "Mohonri Moriancumur"` you could inject it in the body with `{{ name }}`.  This would insert the full name `Mohonri Moriancumur` everywhere you did this.
@@ -57,7 +57,7 @@ Adding every SEO and Social tag into the front-matter section of every source fi
 #### `<ContentDoc>` Dynamic Page Tags
 By using the [NuxtContent `<ContentDoc>` component](https://content.nuxt.com/components/content-doc) and the default slot `v-slot="{ doc }"` the document front-matter variables are available before the page is rendered.  This allows us to use the Nuxt [`useSeoMeta() composable`](https://nuxt.com/docs/api/composables/use-seo-meta) and [`useHead() composable`](https://nuxt.com/docs/api/composables/use-head) functions to set the meta head tags. For example, with a single front-matter key 'description' that can be used to set the page, Open Graph and Twitter descriptions. This avoids redundancy and shortens the front-matter data entry section.
 
-In the foollowing code snippet, the function `onDocReady` accepts the `doc` variable.
+In the following code snippet, the function `onDocReady` accepts the `doc` variable.
 
 ```html
 <template>
@@ -147,13 +147,13 @@ useHead(() => ({
 The SEO Meta robots `<meta name="robots" content="{your robots choice">` element is used to tell search engine crawlers whether the page should be indexed or not.  By default, we want all your pages to be indexed therefore this is best set globally to `index, follow` and only overridden when you have a special case where you want to exclude a page from being indexed.
 
 #### `robots.txt` vs. meta tag header
-The method shown here sets the robots meta tag, the other option is to use a `robots.txt` file in your root which lists all the pages to index or exclude.  Using the meta tag is the easier approach, but there are Nuxt components which could be used to automatically generate a `robots.txt` file instaed.
+The method shown here sets the robots meta tag, the other option is to use a `robots.txt` file in your root which lists all the pages to index or exclude.  Using the meta tag is the easier approach, but there are Nuxt components which could be used to automatically generate a `robots.txt` file instead.
 
 #### SEO Copyright
 The SEO Meta copyright `<meta name="copyright" content="{your copyright}">` element is used to tell search engine crawlers about the copyright of the page.  By default, all pages should have the same copyright and therefore this should be set globally.
 
 #### SEO Icon
-The SEO Icon shown next to the search results is derived from the icon elements in header.  While you can set them reactively, ideally you have a single high-resolution icon that can be uploaded to [favicon.io - creation of favicons and webmanifest](https://favicon.io/) which will create a package of icons as well as a `webmanifest` file.  For example:
+The SEO Icon shown next to the search results is derived from the icon elements in header.  While you can set them reactively, ideally you have a single high-resolution icon that can be uploaded to [favicon.io - creation of favicons and web manifests](https://favicon.io/) which will create a package of icons as well as a `webmanifest` file.  For example:
 
 ```js
     {
@@ -274,9 +274,9 @@ tips
 Snippets on mobile truncate to 130 characters and web to 160 characters.  Make it look nice in the search results.
 
 ### Canonical
-If you are not doing a lot page duplications (different urls to get the same page) you don't need this.
+If you are not doing a lot page duplications (different URLs to get the same page) you don't need this.
 
-If you want to dedup, you need to setup up a
+If you want to de-dup, you need to setup up a
 
 ### Open Graph (OG) Facebook
 

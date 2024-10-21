@@ -1,19 +1,15 @@
 ---
-title: Emojis - Part 1
-description: Emojis for NuxtContent Markdown - part 1
+title: Emojis for People, Animals, Plants, Food, and Places 
+description: People, Animals, Plants, Food, and Places Emojis for NuxtContent Markdown - part 1
 topic: Markdown
 isToc: true
 createDate: 2023-06-22 10:00:00
 createAuthor: John Pennock
 ---
 
-[Markdown Emojis - Part 2](/code/emoji2)
+[Part 2 - Emojis for Transport, Symbols, Sky, Electronics, and Office](/contenttips/emoji2)
 
-Examples that show markdown codes for including emojis.  
-It was derived from the following sites:
-- [ikatyang emoji code](https://github.com/ikatyang/emoji-cheat-sheet?tab=readme-ov-file)
-- [unicode emojis](https://unicode.org/emoji/charts/full-emoji-list.html)
-- [GitHub Emoji API](https://api.github.com/emojis)
+Other markdown emojis examples can be found at [ikatyang emoji code](https://github.com/ikatyang/emoji-cheat-sheet?tab=readme-ov-file), [Unicode emojis](https://unicode.org/emoji/charts/full-emoji-list.html), and [GitHub Emoji API](https://api.github.com/emojis)
 
 
 ## People

@@ -55,14 +55,14 @@ app.mount('#app')
 ### State 
 
 #### ref() vs. reactive(): Which should you use?
-The significant difference between ref() and reactive() is that the ref() function allows us to declare reactive state for *objects and primatives*, while reactive() only declares reactive state for *objects*.
+The significant difference between ref() and reactive() is that the ref() function allows us to declare reactive state for *objects and primitives*, while reactive() only declares reactive state for *objects*.
 
 reactive advantages
 - access the state directly instead of with .value.
 - backwards compatible.
 
 ref() advantages
-- use primatives
+- use primitives
 - update the entire object at once
 - generally more flexible
 - typescript support (if you use typescript)
@@ -80,4 +80,4 @@ GrandChild
 GreatGrandChild   <= Inject  const numbers = inject("numbers");
 
 - advantage - great for reading state across components
-- disadvantage - methods for modifying state need to be duplicated.  Best for readonly.
+- disadvantage - methods for modifying state need to be duplicated.  Best for read only.

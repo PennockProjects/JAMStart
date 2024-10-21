@@ -16,7 +16,7 @@ imageAlt: GitHub logo and AWS CodePipeline Logos
 CI/CD for a Static Site in GitHub to AWS S3 and Route 53
 ::
 
-A CI/CD pipeline that will automatically build and deploy a Nuxt static site from a push to a GitHub repository, build the site, and deploy to AWS infrasture for a custom domain, requires the following steps.
+A CI/CD pipeline that will automatically build and deploy a Nuxt static site from a push to a GitHub repository, build the site, and deploy to AWS infrastructure for a custom domain, requires the following steps.
 
 1. Custom Domain
 2. AWS S3 bucket configured for Static Site Hosting
@@ -176,7 +176,7 @@ Your code pipeline should run, and when all three steps are done you can validat
   S3 → {static site bucket} → properties → Static website hosting | Bucket website endpoint
 
 ## AWS Route53 hosted zone
-To use your S3 static site bucket with a custom domain name, you need an AWS Route53 hosted zone.  If you acquired your custom domain through Route53, the hosted zone will be automatically setup. If you transfered your custom domain names into Route53, you may need to create one.
+To use your S3 static site bucket with a custom domain name, you need an AWS Route53 hosted zone.  If you acquired your custom domain through Route53, the hosted zone will be automatically setup. If you transferred your custom domain names into Route53, you may need to create one.
 
 #### Creating Public hosted zone
 Creating a hosted zone is simple, double-check that it is 'Public hosted zone'.
@@ -186,8 +186,8 @@ A new hosted zone in Route53, should have two records in it.
 
 | Record | Type | Value |
 |--------|------|-------|
-| {custom domain name} | NS | {set of aws name servers} |
-| {custom domain name} | SOA | {single aws name server} |
+| {custom domain name} | NS | {set of AWS name servers} |
+| {custom domain name} | SOA | {single AWS name server} |
 
 You can create a hosted zone without certification or with certification.
 
@@ -219,13 +219,13 @@ Your hosted zone should now have at least three records in the record set.
 
 ## Option B - Cert
 
-In order to create a certificate for your site, you need a cloudfront distribution and a certificate issued for that distribution.  You will also create a CNAME record that will point your domain name to your Cloudfront Distribution.
+In order to create a certificate for your site, you need a CloudFront distribution and a certificate issued for that distribution.  You will also create a CNAME record that will point your domain name to your CloudFront Distribution.
 
 ::FigureCaption
-![Flow Chart with Route53 Cloudfront and S3 static bucket](/images/blog/ChartRoute53CloudFrontS3.jpg)
+![Flow Chart with Route53 CloudFront and S3 static bucket](/images/blog/ChartRoute53CloudFrontS3.jpg)
 
 #caption
-Chart showing how users interact with Route53, Cloudfront, Certificate Manager and S3 for your site
+Chart showing how users interact with Route53, CloudFront, Certificate Manager and S3 for your site
 ::
 
 ### Request certificate
@@ -243,7 +243,7 @@ To request a new certificate :ticket: use the AWS certificate manager.
 ### CNAME cert records
 In order to DNS validate your certificate you need to add one or two CNAME records to your hosted zone.  Conveniently from the certificate request details you can automatically create the records. Choose the 'create CNAME records' button.
 
-:stop_sign: Important - DNS validatation *requires* these CNAME records to be created.
+:stop_sign: Important - DNS validation *requires* these CNAME records to be created.
 
 Wait until it the certificate is issued.
 
@@ -255,8 +255,8 @@ In AWS CloudFront choose 'Create CloudFront Distribution' and change the followi
 |-------|-------|
 | Origin : Origin domain | {insert your S3 Bucket website endpoint (no 'http://')} |
 | Default cache behavior : Viewer protocol policy | Redirect HTTP to HTTPS |
-| Settings: Alternal domain name (CNAME) - optional | {custom domain name} |
-| Optional - Settings: Alternal domain name (CNAME) - optional | www.{custom domain name} |
+| Settings: Alternate domain name (CNAME) - optional | {custom domain name} |
+| Optional - Settings: Alternate domain name (CNAME) - optional | www.{custom domain name} |
 | Settings: Custom SSL certificate - optional | {pick your certificate from dropdown} |
 | Settings: Price class | Use only North America and Europe |
 
@@ -266,7 +266,7 @@ Your hosted zone should now have at least four or maximum five records in the ho
 1. NS record
 2. SOA record
 3. CNAME record(s) for certificate - 1 or 2 depending on if you included 'www' or not
-4. ANAME record - Domain to Cloudfront
+4. ANAME record - Domain to CloudFront
 
 
 ## ANAME 'www' redirect
@@ -283,6 +283,6 @@ In your hosted zone choose 'Create record' for your root
 
 #### Verify
 
-After your certificate is issued and the cloudfront distribution is deployed, you can validate that your custom domain opens your static site hosted from S3.
+After your certificate is issued and the CloudFront distribution is deployed, you can validate that your custom domain opens your static site hosted from S3.
 
 

@@ -9,20 +9,18 @@ description: "John Pennock's blog about web development, live operations, and in
 ![John Pennock](/images/johnpennockbiz.jpg)
 ::
 
-My name is John Pennock, and I'm a software engineer currently incubating using AI to improve health care for seniors and elders, colloquially called **Elder Inteligence**. In addition to learning about AI, I'm also learning Nuxt and Vue 3 as javascript frameworks for creating front ends and backend services. I work from Sammamish, Washington (outside Seattle) and am originally from Idaho Falls, Idaho in the United States. My career has encompassed software engineering, program management, and startup founder. In my various roles I have designed and engineered software at many levels of the services, backend servers, front end web, applications, and game stacks. I love gaming 🐉, personal finance 💸 and history 🏛️.
+My name is John Pennock, and I'm a software engineer engaged in personal projects and incubating using AI to improve health care for seniors and elders, colloquially called **Elder Intelligence**. In addition to learning about AI, I'm also learning Nuxt and Vue 3 as JavaScript frameworks for creating front ends and backend services. I work from the Seattle area and am originally from Idaho Falls, Idaho in the United States. My career has encompassed software engineering, program management, and startup founder. In my various roles I have designed and engineered software at many levels of the services, backend servers, front end web, applications, and game stacks. I love gaming 🐉, personal finance 💸 and history 🏛️.
 
 ## Incubation Projects
 
 My current incubation projects are:
 
-- [Pennock Projects](http://www.pennocks.net) - This site.  My web presence site that blogs about software development. My key learnings from this project are to design, develop, and document a repeatable site framework that uses Nuxt[^1], Markdown, and Static-Site generation for cheap and fast hosting of my own blog.
-- Minimythj - Site coming soon. A site about Greek and Roman mythology as represented on ancient coins. I'm passionate about the topic, but my key incubation learnings from this project are to explore a collection of Mongo NoSQL documents, with a custom schema and content images and relate them to cloud search.
-- **Elder Intelligence** - No site yet.  Researching how to leverage AI for senior citizens to synthensize their medical history, information about recent advances, medical procedures, medical plan coverages, drug interactions, and efficient cost expenditure
-
-[^1]: [nuxt official site](http://nuxt.com)
+- [Pennock Projects](http://www.pennocks.net) - This site.  My web presence site that blogs about software development. My key learnings from this project are to design, develop, and document a repeatable site framework that uses Nuxt, Markdown, and Static-Site generation for cheap and fast hosting of my own blog.
+- Minimyth - Site coming soon. A site about Greek and Roman mythology as represented on ancient coins. I'm passionate about the topic, but my key incubation learnings from this project are to explore a collection of Mongo NoSQL documents, with a custom schema and content images and relate them to cloud search.
+- **Elder Intelligence** - No site yet.  Researching how to leverage AI for senior citizens to synthesize their medical history, information about recent advances, medical procedures, medical plan coverages, drug interactions, and efficient cost expenditure
 
 ## Previous Employers
-- Wizards of the Coast/Hasbro Gaming
+- Hasbro/Wizards of the Coast
 - ArcZap startup
 - Microsoft
 
