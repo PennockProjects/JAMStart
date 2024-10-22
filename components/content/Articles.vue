@@ -1,33 +1,35 @@
 <script setup>
 const props = defineProps({
-  contentRoot: {
+  path: {
     type: String,
-    default: 'code'
+    default: '/code'
   }
 })
 const sort = {topic: 1};
 
-const contentRoot = (props.contentRoot == 'code' || props.contentRoot == 'ops' || props.contentRoot == 'contenttips' ) ? props.contentRoot : 'code'
+const targetPath = (props.path == '/code' || props.path == '/ops' || props.path == '/contenttips' ) ? props.path : '/code'
 
 </script>
 
 <template>
-  <PostList v-slot="{posts}" :content-root="contentRoot" :sort="sort">
+  <ContentList v-slot="{list}" :path="targetPath" :sort="sort">
     <section class="border border-r-2 border-t-0 border-l-0 border-b-0 not-prose font-mono">
       <div class=" text-gray-400 text-sm grid grid-cols-10">
         <div class="col-span-3 md:col-span-2">Topic</div>
         <div class="col-span-7 md:col-span-8">Article</div>
       </div>
       <ul>
-        <li v-for="post in posts" :key="post._path">
+        <li v-for="article in list" :key="article._path">
           <NuxtLink 
-            :to="post._path" 
-            class="grid grid-cols-10 hover:bg-gray-100 dark:hover:bg-gray-800">
-            <div class="col-span-3 md:col-span-2">{{ post.topic }}</div>
-            <div class="col-span-7 md:col-span-8">{{ post.title }}</div>
+            v-if="article._path != targetPath"
+            :to="article._path" 
+            class="grid grid-cols-10 hover:bg-gray-100 dark:hover:bg-gray-800"
+          >
+            <div class="col-span-3 md:col-span-2">{{ article.topic }}</div>
+            <div class="col-span-7 md:col-span-8">{{ article.title }}</div>
           </NuxtLink>
         </li>
       </ul>
     </section>
-  </PostList>
+  </ContentList>
 </template>

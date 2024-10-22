@@ -10,6 +10,6 @@ topic: General
 
 Lookup and references for content, HTML, markdown, images, emojis, media, styles, CSS, and other non-code or non-operational elements of software engineering.
 
-::Articles{contentRoot="contenttips"}
+::Articles{path="/contenttips"}
 
 

@@ -91,7 +91,7 @@ onMounted(() => {
 </script>
 
 <template>
-<div>
+<main>
   <ContentDoc>
     <template v-slot="{ doc }">
       {{ onDocReady(doc)  }}
@@ -130,7 +130,7 @@ onMounted(() => {
       <p>This document {{ route.path }} could not be found</p>
     </template>
   </ContentDoc>
-</div>
+</main>
 </template>
 
 <style scoped>
