@@ -1,7 +1,7 @@
 ---
-title: Images Social SEO
-description: A quick reference around images for social posting and SEO
-topic: Images
+title: SEO Social Meta
+description: A metadata reference for content specific images and tags for social posting and SEO
+topic: Metadata
 createAuthor: John Pennock
 createDate: 2023-10-04
 isToc: true
@@ -41,8 +41,9 @@ Fav Icon Suite generator - [favicon.io](https://favicon.io/)
 - Twitter Image Formats - `JPG` `PNG` `WEBP`, `GIF` (Only the first frame of an animated GIF will be used). 
 `SVG` is *not* supported.
 
-- [Twitter Card Validator](https://cards-dev.twitter.com/validator)
-
+### X/Twitter Validator
+- [X/Twitter Card Validator](https://cards-dev.twitter.com/validator) - tags
+- X/Twitter compose for image validation.
 
 ## Open Graph Images
 
@@ -52,6 +53,10 @@ Fav Icon Suite generator - [favicon.io](https://favicon.io/)
 
 ### Open Graph Image Sizes
 A file size of less than 8 MB. 
+
+### OG Facebook LinkedIn Validators
+[Facebook Validator](https://developers.facebook.com/tools/debug/)
+[LinkedIn Validator](https://www.linkedin.com/post-inspector/)
 
 ## SEO
 Typically all your pages will be represented by your fav icon suite. Starting with at least a 180x180 image use [favicon.io](https://favicon.io/) to create a package of icons as well as a `webmanifest` file.
@@ -85,3 +90,8 @@ Typically all your pages will be represented by your fav icon suite. Starting wi
       href: '/site.webmanifest'
     },
 ```
+
+## Blog Posts
+[SEO and Social](/blog/2024/nuxtcontentseosocialblog)
+
+#### TBD Topical Blog Post Custom Component

@@ -3,6 +3,7 @@ const socialDefaults = {
   siteName: 'Pennock Projects',
   title: 'Pennock Projects',
   description: 'Pennock Projects is a software engineering blog about front end frameworks, backend services, databases, and AI architecture by John Pennock',
+  author: 'John Pennock',
   rootUrl: "https://pennockprojects.com",
   robots: 'index, follow',
   copyright: '© 2024 by John Pennock',

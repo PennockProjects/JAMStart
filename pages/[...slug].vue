@@ -2,6 +2,7 @@
 const activeId = ref(null)
 const route = useRoute()
 const socialDefaults = inject("socialDefaults");
+const author = ref(socialDefaults.author)
 const ogTitle = ref(socialDefaults.title)
 const ogDescription = ref(socialDefaults.description)
 const ogImage = ref(socialDefaults.image2x1)
@@ -26,6 +27,7 @@ useHead(() => ({
 
 
 useSeoMeta({
+  author: () => author.value,
   ogType: socialDefaults.type,
   ogTitle: () => ogTitle.value,
   ogDescription: () => ogDescription.value,
@@ -57,6 +59,7 @@ const onDocReady = (doc) => {
   twitterImageAlt.value = doc.twitterImageAlt || doc.imageAlt || socialDefaults.imageAlt
   twitterCard.value = doc.twitterCard || socialDefaults.twitterCard
   twitterCreatorHandle.value = doc.twitterCreatorHandle || socialDefaults.twitterCreatorHandle
+  author.value = doc.createAuthor || socialDefaults.author
 
   // console.log("onDocReady, twitterImage.value", twitterImage.value, twitterImageAlt.value)
 }

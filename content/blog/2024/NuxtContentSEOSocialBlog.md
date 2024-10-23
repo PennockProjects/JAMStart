@@ -1,11 +1,11 @@
 ---
-title: SEO and Social
-ogTitle: SEO Open Graph Tags
-twitterTitle: SEO Twitter Tags
+title: SEO Social Metadata for NuxtContent
+ogTitle: Open Graph Meta for NuxtContent
+twitterTitle: X/Twitter Meta for NuxtContent
 description: A system for Nuxt.js NuxtContent front-matter variables, HTML <head> tags for effective SEO Twitter and open graph social posting
 ogDescription: A system for Nuxt.js NuxtContent front-matter variables, HTML <head> tags for effective SEO open graph social posting
 twitterDescription: A system for Nuxt.js NuxtContent HTML <head> tags for effective SEO twitter social posting
-topic: Development
+topic: Metadata
 isToc: true
 createDate: 2024-06-25
 createAuthor: John Pennock
