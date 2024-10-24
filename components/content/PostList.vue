@@ -60,20 +60,23 @@ const posts = computed(() => {
 
 <template>
   <slot :posts="posts">
-    <section class="not-prose font-mono mr-4 md:mr-16">
-      <div class="text-gray-400 text-sm grid grid-cols-9">
+    <section class="not-prose font-mono mr-2 md:mr-8">
+      <div class="grid grid-cols-10 font-light text-xs/7 md:text-lg/9 border-b">
         <div class="col-span-2">date</div>
-        <div class="col-span-7 md:col-span-5">title</div>
         <div class="hidden md:block md:col-span-2">topic</div>
+        <div class="col-span-8 md:col-span-6">title</div>
       </div>
       <ul>
         <li v-for="post in posts" :key="post._path">
-          <NuxtLink :to="post._path" class="grid grid-cols-9 hover:bg-gray-100 dark:hover:bg-gray-800">
-            <div class="col-span-2 text-gray-400 dark:text-gray-500">
+          <NuxtLink 
+            :to="post._path" 
+            class="grid grid-cols-10 border-b hover:bg-gray-100 dark:hover:bg-gray-800"
+          >
+            <div class="col-span-2 text-xs/7 md:text-lg/9 font-light">
               {{ post.isDisplayYear ? post.monthDayYear : post.monthDay }}
             </div>
-            <div class="col-span-7 md:col-span-5">{{ post.title }}</div>
-            <div class="hidden md:block md:col-span-2">{{ post.topic }}</div>
+            <div class="hidden md:block md:col-span-2 font-light">{{ post.topic }}</div>
+            <div class="col-span-8 md:col-span-6 font-semibold">{{ post.title }}</div>
           </NuxtLink>
         </li>
       </ul>
