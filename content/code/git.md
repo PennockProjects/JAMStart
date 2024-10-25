@@ -3,7 +3,7 @@ title: Git Cheat Sheet
 description: A Git cheat sheet and snippets
 topic: Git
 isToc: true
-createDate: 2023-05-27
+createDate: 2024-05-27
 createAuthor: John Pennock
 
 ---

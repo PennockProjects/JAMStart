@@ -19,6 +19,7 @@ const { data } = useAsyncData(
   () => {
     const query = queryContent(props.contentRoot)
       .where({_path: { $ne: '/'+props.contentRoot} })
+      .where({_partial: false})
       .only(['_path', 'title', 'topic', 'createDate'])
       .sort(props.sort)
 

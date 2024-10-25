@@ -1,5 +1,12 @@
 <script setup>
+
+const isProdEnv = process.env.NODE_ENV === "production";
+if(!isProdEnv) {
+  console.log("========> Development Environment <=============")
+}
+
 const socialDefaults = {
+  isProdEnv,
   siteName: 'Pennock Projects',
   title: 'Pennock Projects',
   description: 'Pennock Projects is a software engineering blog about front end frameworks, backend services, databases, and AI architecture by John Pennock',
@@ -77,15 +84,16 @@ useSeoMeta({
   copyright: socialDefaults.copyright
 })
 
-
 </script>
 
+<!-- Use NuxtLayout -->
 <template>
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
 </template>
 
+<!-- Global Styles -->
 <style>
 body {
   font-family: 'Roboto';

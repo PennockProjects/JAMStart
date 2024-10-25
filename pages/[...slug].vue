@@ -55,7 +55,11 @@ const onDocReady = (doc) => {
   ogUrl.value = socialDefaults.rootUrl + doc._path 
   twitterTitle.value = xTitle && xTitle != socialDefaults.title ? `${socialDefaults.title} ${xTitle}` : socialDefaults.title
   twitterDescription.value = doc.twitterDescription || doc.description || socialDefaults.description
-  twitterImage.value = doc.twitterImage || doc.image || socialDefaults.image2x1
+  if(socialDefaults.isProdEnv) {
+    twitterImage.value = socialDefaults.rootUrl + (doc.twitterImage || doc.image || socialDefaults.image2x1)
+  } else {
+    twitterImage.value = doc.twitterImage || doc.image || socialDefaults.image2x1
+  }
   twitterImageAlt.value = doc.twitterImageAlt || doc.imageAlt || socialDefaults.imageAlt
   twitterCard.value = doc.twitterCard || socialDefaults.twitterCard
   twitterCreatorHandle.value = doc.twitterCreatorHandle || socialDefaults.twitterCreatorHandle
