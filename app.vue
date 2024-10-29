@@ -15,6 +15,7 @@ const socialDefaults = {
   robots: 'index, follow',
   copyright: '© 2024 by John Pennock',
   type: 'article',
+  imageRoot: '/images',
   image2x1: '/images/PennockProjectsFB.jpg',
   image2x1Width: 1200,
   image2x1Height: 600,
@@ -115,13 +116,43 @@ body {
   @apply text-black dark:text-white
 }
 
-.page-enter-active,
+.page-enter-active {
+  animation: bounce-in .7s;
+}
+
+.page-leave-active {
+  animation: bounce-out .5s;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+/* .page-enter-active,
 .page-leave-active {
   transition: all 0.3s;
 }
+
 .page-enter-from,
 .page-leave-to {
   opacity: 0.5;
   filter: grayscale(1);
-}
+} */
 </style>

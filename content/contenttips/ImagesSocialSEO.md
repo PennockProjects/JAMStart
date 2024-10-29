@@ -1,16 +1,16 @@
 ---
 title: Metadata for SEO Social
-description: A metadata reference for content specific images and tags for social posting and SEO
+description: A metadata reference for content specific tags and images for SEO and social posting
 topic: Metadata
 createAuthor: John Pennock
 createDate: 2023-10-04
 isToc: true
 image: /images/Metadata.jpg
-imageAlt: Mouse pointer ready to click a 'Tweet' button
+imageAlt: Source code showing head elements in html
 ---
 
 ::FigureCaption
-![Mouse pointer ready to click a 'Tweet' button](/images/Metadata.jpg)
+![Source code showing head elements in html](/images/Metadata.jpg)
 
 #caption
 Images should be glorious.

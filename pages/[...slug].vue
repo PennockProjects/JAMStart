@@ -2,18 +2,27 @@
 const activeId = ref(null)
 const route = useRoute()
 const socialDefaults = inject("socialDefaults");
-const author = ref(socialDefaults.author)
-const ogTitle = ref(socialDefaults.title)
-const ogDescription = ref(socialDefaults.description)
-const ogImage = ref(socialDefaults.image2x1)
-const ogImageAlt = ref(socialDefaults.imageAlt)
-const ogUrl = ref(socialDefaults.rootUrl)
-const twitterTitle = ref(socialDefaults.title)
-const twitterDescription = ref(socialDefaults.description)
-const twitterImage = ref(socialDefaults.image2x1)
-const twitterImageAlt = ref(socialDefaults.imageAlt)
-const twitterCard = ref(socialDefaults.twitterCard)
-const twitterCreatorHandle = ref(socialDefaults.twitterCreatorHandle)
+
+const { data } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
+let doc = data.value || {}
+let oTitle = (doc.ogTitle || doc.title)
+let xTitle = (doc.twitterTitle || doc.title)
+let twitterImage = doc.twitterImage || doc.image || socialDefaults.image2x1
+let seoInput = {}
+
+seoInput.author = doc.createAuthor || socialDefaults.author
+seoInput.ogTitle = (oTitle && oTitle != socialDefaults.title) ? `${socialDefaults.title} ${oTitle}` : socialDefaults.title
+seoInput.twitterTitle = (xTitle && xTitle != socialDefaults.title) ? `${socialDefaults.title} ${xTitle}` : socialDefaults.title
+seoInput.ogDescription = doc.ogDescription || doc.description || socialDefaults.description
+seoInput.twitterDescription = doc.twitterDescription || doc.description || socialDefaults.description
+seoInput.ogImage = doc.ogImage || doc.image || socialDefaults.image2x1
+seoInput.ogImageAlt = doc.ogImageAlt || doc.imageAlt || socialDefaults.imageAlt
+// Note: twitter will not show the static image unless the static non-js version has a full url.
+seoInput.twitterImage = socialDefaults.rootUrl + twitterImage
+seoInput.twitterImageAlt  = doc.twitterImageAlt || doc.imageAlt || socialDefaults.imageAlt
+seoInput.ogUrl = socialDefaults.rootUrl + doc._path 
+seoInput.twitterCard = doc.twitterCard || socialDefaults.twitterCard
+seoInput.twitterCreatorHandle = doc.twitterCreatorHandle || socialDefaults.twitterCreatorHandle
 
 // Canonical is in the head and not meta tags
 useHead(() => ({
@@ -25,48 +34,24 @@ useHead(() => ({
   ],
 }))
 
-
+// Set the meta tags for this page
 useSeoMeta({
-  author: () => author.value,
+  author: seoInput.author,
   ogType: socialDefaults.type,
-  ogTitle: () => ogTitle.value,
-  ogDescription: () => ogDescription.value,
-  ogImage: () => ogImage.value,
-  ogImageAlt: () => ogImageAlt.value,
+  ogTitle: seoInput.ogTitle,
+  ogDescription: seoInput.ogDescription,
+  ogImage: seoInput.ogImage,
+  ogImageAlt: seoInput.ogImageAlt,
   ogSiteName: socialDefaults.siteName,
-  ogUrl: () => ogUrl.value,
-  twitterTitle: () => twitterTitle.value,
-  twitterDescription: () => twitterDescription.value,
-  twitterImage: () => twitterImage.value,
-  twitterImageAlt: () => twitterImageAlt.value,
-  twitterCard: () => twitterCard.value,
+  ogUrl: seoInput.ogUrl,
+  twitterTitle: seoInput.twitterTitle,
+  twitterDescription: seoInput.twitterDescription,
+  twitterImage: seoInput.twitterImage,
+  twitterImageAlt: seoInput.twitterImageAlt,
+  twitterCard: seoInput.twitterCard,
   twitterSite: socialDefaults.twitterSiteHandle,
-  twitterCreator: () => twitterCreatorHandle.value
+  twitterCreator: seoInput.twitterCreatorHandle
 })
-
-const onDocReady = (doc) => {
-  let oTitle = (doc.ogTitle || doc.title)
-  let xTitle = (doc.twitterTitle || doc.title)
-
-  ogTitle.value =  oTitle && oTitle != socialDefaults.title ? `${socialDefaults.title} ${oTitle}` : socialDefaults.title
-  ogDescription.value = doc.ogDescription || doc.description || socialDefaults.description
-  ogImage.value = doc.ogImage || doc.image || socialDefaults.image2x1
-  ogImageAlt.value = doc.ogImageAlt || doc.imageAlt || socialDefaults.imageAlt
-  ogUrl.value = socialDefaults.rootUrl + doc._path 
-  twitterTitle.value = xTitle && xTitle != socialDefaults.title ? `${socialDefaults.title} ${xTitle}` : socialDefaults.title
-  twitterDescription.value = doc.twitterDescription || doc.description || socialDefaults.description
-  if(socialDefaults.isProdEnv) {
-    twitterImage.value = socialDefaults.rootUrl + (doc.twitterImage || doc.image || socialDefaults.image2x1)
-  } else {
-    twitterImage.value = doc.twitterImage || doc.image || socialDefaults.image2x1
-  }
-  twitterImageAlt.value = doc.twitterImageAlt || doc.imageAlt || socialDefaults.imageAlt
-  twitterCard.value = doc.twitterCard || socialDefaults.twitterCard
-  twitterCreatorHandle.value = doc.twitterCreatorHandle || socialDefaults.twitterCreatorHandle
-  author.value = doc.createAuthor || socialDefaults.author
-
-  // console.log("onDocReady, twitterImage.value", twitterImage.value, twitterImageAlt.value)
-}
 
 onMounted(() => {
 
@@ -101,7 +86,6 @@ onMounted(() => {
 <main>
   <ContentDoc>
     <template v-slot="{ doc }">
-      {{ onDocReady(doc)  }}
       <article class="mx-auto">
         <div class="grid grid-cols-10 gap-4">
           <div 

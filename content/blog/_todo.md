@@ -13,4 +13,5 @@ createAuthor: John Pennock
 - search
 - email and distribution list
 - article common - a list of other Posts or Articles around this topic - NuxtContent custom component
+- unit tests
 
