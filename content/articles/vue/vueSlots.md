@@ -2,12 +2,13 @@
 title: Vue 3 Slots
 description: A cheat sheet for Vue 3 Slots
 topic: Vue
+format: Cheat Sheet
 isToc: true
 createDate: 2023-05-23
 createAuthor: John Pennock
 ---
 
-Examples and snippets for Vue 3 Slots.  See [Vue 3 Slot blog post](/blog/2024/vueslotsblog) for more information.
+A cheat sheet with examples and snippets for Vue 3 Slots.  See [Vue 3 Slot blog post](/blog/2024/vueslotsblog) for more information.
 
 ## Named Slots
 You can have more than one slot in a component, but you have to name all others but one (the default)

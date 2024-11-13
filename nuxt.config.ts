@@ -8,6 +8,8 @@ export default defineNuxtConfig({
     classSuffix: ''
   },
 
+  compatibilityDate: '2024-08-13',
+
   content: {
     markdown: {
       anchorLinks: false,
@@ -34,7 +36,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     "@nuxt/content",
-    "@nuxt/image"
+    "@nuxt/image",
+    '@stefanobartoletti/nuxt-social-share'
   ],
 
   nitro: {
@@ -49,5 +52,7 @@ export default defineNuxtConfig({
     }
   },
 
-  compatibilityDate: '2024-08-13'
+  socialShare: {
+    baseUrl: 'https://pennockprojects.com'
+  }
 })

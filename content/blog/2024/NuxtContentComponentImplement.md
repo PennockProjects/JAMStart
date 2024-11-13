@@ -17,8 +17,8 @@ Vue.js NuxtContent Custom Components are `.vue` files which are used to add cust
 Here are complete examples of NuxtContent Custom Components I developed (shared for use under the MIT license).
 
 Pennock Projects NuxtContent Custom Components
-- [MonkInset](/code/nuxtcontentmonkinset)
-- [FigureCaption](/code/nuxtcontentfigurecaption)
+- [MonkInset](/articles/nuxtcontentmonkinset)
+- [FigureCaption](/articles/nuxtcontentfigurecaption)
 
 See this blog post on [usage](nuxtcontentcomponentusage)
 

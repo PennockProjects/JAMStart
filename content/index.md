@@ -12,12 +12,9 @@ editAuthor: John Pennock
 ::
 
 Welcome. My name is [John Pennock](/about).  This is a blog about my projects:
-1) Documenting [my journey](/blog) as a solo developer
-2) Building a developer-centric blog publishing platform
-3) Sharing code, refenences, cheat sheets, learnings, tips, and examples. Check out my cheat sheets for
-    - [code](/code)
-    - [ops](/ops)
-    - [content](/contenttips)
+1) Blogging [my journey](/blog) as a solo developer
+2) Building a developer-centric [markdown blog](/gitprojects) publishing platform
+3) Documenting [articles](/articles) as references, cheat sheets, how-tos, tips, and examples.
 
 I am the source for the content here and nothing published here should be understood as being representative of any other person, organization, or association.  Any code, operational tip, documentation, or technical implication is shared using the [MIT License](/license)
 

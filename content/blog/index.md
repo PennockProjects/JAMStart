@@ -1,5 +1,5 @@
 ---
-title: Blog List
+title: Blog Posts
 description: Pennock Projects most recent blog posts
 ---
 

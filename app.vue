@@ -5,16 +5,18 @@ if(!isProdEnv) {
   console.log("========> Development Environment <=============")
 }
 
-const socialDefaults = {
+const metaDefaults = {
   isProdEnv,
   siteName: 'Pennock Projects',
   title: 'Pennock Projects',
-  description: 'Pennock Projects is a software engineering blog about front end frameworks, backend services, databases, and AI architecture by John Pennock',
+  description: 'Pennock Projects is a software engineering blog about website and mobile applications, front end frameworks, backend API services, databases, and AI architecture by John Pennock',
+  keywords: ['blog'],
   author: 'John Pennock',
+  creator: 'Pennock Projects',
   rootUrl: "https://pennockprojects.com",
   robots: 'index, follow',
   copyright: '© 2024 by John Pennock',
-  type: 'article',
+  ogType: 'article',
   imageRoot: '/images',
   image2x1: '/images/PennockProjectsFB.jpg',
   image2x1Width: 1200,
@@ -28,10 +30,12 @@ const socialDefaults = {
   twitterCreatorHandle: '@JohnPennock'
 }
 
+// allow children components readonly access to social defaults.
+provide("metaDefaults", metaDefaults);
 
 useHead({
   titleTemplate: (titleChunk) => {
-    return (titleChunk && (titleChunk != socialDefaults.title)) ? `${titleChunk} - ${socialDefaults.title}` : socialDefaults.title;
+    return (titleChunk && (titleChunk != metaDefaults.title)) ? `${titleChunk} - ${metaDefaults.title}` : metaDefaults.title;
   },
   htmlAttrs: {
     lang: 'en'
@@ -76,13 +80,10 @@ useHead({
   ]
 })
 
-// allow children components readonly access to social defaults.
-provide("socialDefaults", socialDefaults);
-
 // Setting Global SEO on each page
 useSeoMeta({
-  robots: socialDefaults.robots,
-  copyright: socialDefaults.copyright
+  robots: metaDefaults.robots,
+  copyright: metaDefaults.copyright
 })
 
 </script>

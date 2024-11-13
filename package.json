@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/content": "^2.12.1",
     "@nuxt/image": "^1.6.0",
+    "@stefanobartoletti/nuxt-social-share": "^1.2.0",
     "nuxt": "^3.11.1",
     "remark-unwrap-images": "^4.0.0",
     "sitemap": "^8.0.0",

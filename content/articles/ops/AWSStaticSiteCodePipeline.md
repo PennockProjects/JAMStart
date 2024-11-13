@@ -1,7 +1,16 @@
 ---
-title: CI/CD GitHub AWS S3 Site Custom Domain
-description: Creating AWS infrastructure and pipeline to automatic deploy a GitHub Nuxt 3 Static Rendered site to an S3 bucket with a fully qualified custom DNS 
-topic: CICD
+title: GitHub S3 CICD Pipeline
+description: How to use AWS infrastructure to create a git push CI/CD pipeline for a Nuxt 3 Static website built and deployed to a AWS S3 bucket with a fully qualified custom domain name 
+topic: Ops
+keywords:
+  - CodePipeline
+  - Vue_js
+  - Nuxt_js
+  - CloudFront
+  - CodeBuild
+  - AWSS3
+  - GitHub
+format: How-to
 isToc: true
 createAuthor: John Pennock
 createDate: 2023-09-13
@@ -9,34 +18,21 @@ image: /images/GitHubAWSCodePipeline.jpg
 imageAlt: GitHub logo and AWS CodePipeline Logos
 ---
 
-::FigureCaption
-![GitHub logo + AWS CodePipeline Logo](/images/GitHubAWSCodePipeline.jpg)
+{{ description }}
 
-#caption
-CI/CD for a Static Site in GitHub to AWS S3 and Route 53
-::
+## Steps
 
-A CI/CD pipeline that will automatically build and deploy a Nuxt static site from a push to a GitHub repository, build the site, and deploy to AWS infrastructure for a custom domain, requires the following steps.
-
-1. Custom Domain
-2. AWS S3 bucket configured for Static Site Hosting
-3. AWS CodePipeline - Git Sync, AWS CodeBuild, Deploy to S3 Bucket
-4. AWS Route 53 hosted zone
+1. Purchase a Custom Domain
+2. Requisition a S3 bucket configured for Static Site Hosting
+3. Requisition a CodePipeline - Git Sync, AWS CodeBuild, Deploy to S3 Bucket
+4. Requisition a Route 53 hosted zone
     - Non-certificate (http warning)
     - CloudFront with certificate (https)
-5. AWS CloudFront Distribution
-6. AWS Certificate for https
-
-
-### Resources
-The following videos illustrate many of the steps used here:
-- [Amazon S3 - Static Website Hosting with Custom Domain and TLS by Bryan Krausen](https://www.youtube.com/watch?v=X9cdkqBgLbs)
-- [AWS CodePipeline CI/CD by DevSpot](https://www.youtube.com/watch?v=jZrfiPW58k8&ab_channel=DevSpot)
-- [Amazon Route 53 Basics Tutorial | Domain Registration, A Records, CNAME Records, Aliases, Subdomains by Tiny Technical Tutorials](https://www.youtube.com/watch?v=JRZiQFVWpi8&ab_channel=TinyTechnicalTutorials)
+5. Requisition a CloudFront Distribution
+6. Requisition a https Certificate
 
 ## Custom Domain
-Create, transfer, or attach nameservers to your custom domain in AWS Route 53.
-Yes, do this first.
+You need a registered custom domain first. Yes, really.  Create, transfer, and/or attach custom domain nameservers in AWS Route 53.
 
 ## AWS S3 Bucket for Static Site
 
@@ -45,7 +41,7 @@ You must name the S3 Bucket exactly the same as your custom Domain name, i.e. fo
 
 ### S3 Bucket Permissions
 
-#### Block all public access
+#### Allow public access
 
 S3 Bucket Permissions `Block all public access` should be set to Off
 
@@ -68,6 +64,8 @@ Add a bucket policy for object access, replace `{{BucketName}}` with your bucket
 ```
 ### S3 Bucket Properties
 
+Set the following S3 bucket properties as appropriate.
+
 | Property | State |
 |----------|-------|
 | Static website hosting | Enable |
@@ -77,13 +75,14 @@ Add a bucket policy for object access, replace `{{BucketName}}` with your bucket
 
 ## AWS CodePipeline
 
-The AWS CodePipeline will perform three tasks.
+Create an AWS CodePipeline that will perform three tasks.
 1) Attach and watch a GitHub repo branch for changes
 2) Initiate AWS Codebuild and generate your Nuxt 3 Static Site
 3) Copy the built Nuxt Static Site into your S3 site bucket
 
 
-Creating a pipeline
+### Create a CodePipeline
+From AWS Console find CodePipeline and choose 'Create'
 
 - Create a unique name for the pipeline
 - Choose Queued
@@ -130,15 +129,15 @@ Build provider → AWS codeBuild
 | Environment image | Managed image |
 | Environment Compute | EC2 |
 | Operating system | Amazon Linux |
-| Runtime(s) | Standard |
+| Runtime | Standard |
 | Image | 'aws/codebuild/amazonlinux2-x86_64-standard:5.0' |
 | Image Version | Always use the latest image for this runtime version |
-| Buildspec Build specifications | Use a buildspec file |
+| Buildspec Build specifications | Use a Buildspec file |
 | Buildspec name | (leave blank or `buildspec.yml`) |
 
 ### Pipeline buildspec.yml
 
-Add the following [buildspec.yml](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html) file to your repo and this will be in the instruction to build the Nuxt static site as well as inidcating where the built files will exist after build.
+Add the following [buildspec.yml](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html) file to your repo.  These are the instructions that will be used to build the Nuxt static site as well as indicating where the built files will exist after build.
 
 ```yml
 version: 0.2
@@ -171,7 +170,8 @@ The third stage deploys the built files to the S3 website bucket
 
 ### Verify
 
-Your code pipeline should run, and when all three steps are done you can validate at:
+If all your steps are correct, your code pipeline should run.  You should validate by opening the website at the S3 bucket website endpoint.
+If all your steps are correct, your code pipeline should run.  You should validate by opening the website at the S3 bucket website endpoint.
   
   S3 → {static site bucket} → properties → Static website hosting | Bucket website endpoint
 
@@ -193,7 +193,7 @@ You can create a hosted zone without certification or with certification.
 
 ## Option A - No-cert
 ::FigureCaption
-![Flow Chart with Route53 and S3 static bucket](/images/blog/Route53_S3.jpg)
+![Flow Chart with Route53 and S3 static bucket](/images/2024/Route53_S3.jpg)
 
 #caption
 Chart showing how users interact with Route53 and S3 for your site
@@ -222,7 +222,7 @@ Your hosted zone should now have at least three records in the record set.
 In order to create a certificate for your site, you need a CloudFront distribution and a certificate issued for that distribution.  You will also create a CNAME record that will point your domain name to your CloudFront Distribution.
 
 ::FigureCaption
-![Flow Chart with Route53 CloudFront and S3 static bucket](/images/blog/ChartRoute53CloudFrontS3.jpg)
+![Flow Chart with Route53 CloudFront and S3 static bucket](/images/2024/ChartRoute53CloudFrontS3.jpg)
 
 #caption
 Chart showing how users interact with Route53, CloudFront, Certificate Manager and S3 for your site
@@ -286,3 +286,8 @@ In your hosted zone choose 'Create record' for your root
 After your certificate is issued and the CloudFront distribution is deployed, you can validate that your custom domain opens your static site hosted from S3.
 
 
+### Resources
+The following videos illustrate many of the steps used here:
+- [Amazon S3 - Static Website Hosting with Custom Domain and TLS by Bryan Krausen](https://www.youtube.com/watch?v=X9cdkqBgLbs)
+- [AWS CodePipeline CI/CD by DevSpot](https://www.youtube.com/watch?v=jZrfiPW58k8&ab_channel=DevSpot)
+- [Amazon Route 53 Basics Tutorial | Domain Registration, A Records, CNAME Records, Aliases, Subdomains by Tiny Technical Tutorials](https://www.youtube.com/watch?v=JRZiQFVWpi8&ab_channel=TinyTechnicalTutorials)

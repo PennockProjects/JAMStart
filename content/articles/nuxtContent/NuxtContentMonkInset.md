@@ -1,13 +1,19 @@
 ---
 title: MonkInset Component
 description: MonkInset creates a floating block of an image, emoji, and/or text with an effect like an illuminated medieval manuscript for NuxtContent authors using simple Markdown text syntax.
-topic: NuxtContent
+topic: Nuxt Content
+format: Code
+keywords:
+  - NuxtContent
+  - Vue_js
+  - Nuxt_js
+  - component
 isToc: true
+isManualImage: true
 createDate: 2024-06-07
 createAuthor: John Pennock
 image: '/images/IlluminatedManuscriptBiblePage.jfif'
 imageAlt: Custom Component as Puzzle Pieces
-
 ---
 
 ## MonkInset Intro

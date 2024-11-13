@@ -2,10 +2,13 @@
 title: Markdown Cheat Sheet
 description: Examples and snippets for authoring using Markdown
 topic: Markdown
+format: Cheat Sheet
+keywords:
+  - markdown
 isToc: true
 createAuthor: John Pennock
-createDate: 2023-05-13
-image: /images/MarkdownFileLogo.png
+createDate: 2024-05-13
+image: /images/markdown/MarkdownFileLogo.png
 imageAlt: Markdown File Logo
 ---
 

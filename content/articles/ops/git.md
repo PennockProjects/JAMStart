@@ -1,10 +1,16 @@
 ---
 title: Git Cheat Sheet
-description: A Git cheat sheet and snippets
+description: A Pennock Projects cheat sheet for Git -- the distributed source code control system
 topic: Git
+format: Cheat Sheet
+keywords:
+  - Git
+  - terminal
 isToc: true
 createDate: 2024-05-27
 createAuthor: John Pennock
+image: /images/ops/GitLogo.png
+imageAlt: The Git logo
 
 ---
 

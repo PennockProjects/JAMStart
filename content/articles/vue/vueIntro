@@ -2,6 +2,7 @@
 title: Vue 3 Basics
 description: A beginner's guide to getting started with Vue 3.
 topic: Vue
+format: Review
 isToc: true
 createDate: 2023-05-03
 createAuthor: John Pennock
@@ -69,6 +70,7 @@ ref() advantages
 
 ### provide/inject  - avoids props drilling from parent to child.
 
+```text
 App                   provide state, eg. [4,6.9,3,7]  Provide("numbers", numbers);
 |
 Parent
@@ -81,3 +83,4 @@ GreatGrandChild   <= Inject  const numbers = inject("numbers");
 
 - advantage - great for reading state across components
 - disadvantage - methods for modifying state need to be duplicated.  Best for read only.
+```

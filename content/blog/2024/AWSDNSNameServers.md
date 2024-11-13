@@ -6,7 +6,7 @@ isToc: true
 version: 1.0
 createDate: 2024-09-24 
 createAuthor: John Pennock
-image: '/images/blog/AWSCertificateIssued.jpg'
+image: '/images/2024/AWSCertificateIssued.jpg'
 imageAlt: An AWS Certificate successfully issued
 ---
 
@@ -26,7 +26,7 @@ Below are some troubleshooting steps I took and some learnings I made when I enc
 ### The problem
 
 ::figure-caption
-![Route 53 Hosted Zone with NS (NameServer) record](/images/blog/Route53HostedZoneNameServers.jpg)
+![Route 53 Hosted Zone with NS (NameServer) record](/images/2024/Route53HostedZoneNameServers.jpg)
 #caption
 All looks good from the Route 53 Hosted Zone Dashboard
 ::
@@ -70,7 +70,7 @@ I probably should have started with this troubleshooting step.
 Next, I doubled checked my hosted zone NS record. I had assumed that was all I needed. I validated the AWS name servers there were official and real. With a couple of Stack Overflow queries I found a reference to the registered domain needed the name servers in addition to the NS record.
 
 ::figure-caption
-![Route 53 Dashboard showing Registered Domain option](/images/blog/Route53RegisteredDomainsChoice.jpg)
+![Route 53 Dashboard showing Registered Domain option](/images/2024/Route53RegisteredDomainsChoice.jpg)
 #caption
 Registered Domain option vs. Hosted Zone
 ::
@@ -81,7 +81,7 @@ When I looked at my registered custom domain, it had already had two name server
 
 So I just added my four AWS name servers from the hosted zone NS record to my registered domain name servers.
 ::figure-caption
-![Route 53 Registered Domain Name Servers](/images/blog/Route53RegisteredDomainsNameServer.jpg)
+![Route 53 Registered Domain Name Servers](/images/2024/Route53RegisteredDomainsNameServer.jpg)
 #caption
 Registered Domain needs AWS Name Servers!
 ::
@@ -89,7 +89,7 @@ Registered Domain needs AWS Name Servers!
 ### Learning - Update Registered Domain
 
 ::MonkInset{size = 'lg' float = 'right'}
-![An AWS Certificate successfully issued](/images/blog/AWSCertificateIssued.jpg)
+![An AWS Certificate successfully issued](/images/2024/AWSCertificateIssued.jpg)
 ::
 
 And a few minutes later I could see my site in the browser and miraculously also the certificate I created was finally issued.

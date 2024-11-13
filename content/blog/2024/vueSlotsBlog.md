@@ -7,7 +7,7 @@ createDate: 2024-05-23 10:00:00
 createAuthor: John Pennock
 ---
 
-A code example about [Vue 3 Slots](/code/vueslots)
+A code example about [Vue 3 Slots](/articles/vue/vueslots)
 
 ## What is a Slot?
 

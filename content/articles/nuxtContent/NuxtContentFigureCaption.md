@@ -1,8 +1,15 @@
 ---
 title: FigureCaption Component
-description: The FigureCaption custom component has two slots to take default content into a <figure></figure> element and a caption content into a <figcaption></figcaption> element like you would find in an article.
-topic: NuxtContent
+description: The FigureCaption custom component for NuxtContent that has two slots to take default content into a <figure></figure> element and a caption content into a <figcaption></figcaption> element like you would find in an article.
+topic: Nuxt Content
+format: Code
+keywords:
+  - NuxtContent
+  - Vue_js
+  - Nuxt_js
+  - component
 isToc: false
+isManualImage: true
 createDate: 2024-08-01
 createAuthor: John Pennock
 image: '/images/FigureCaptionExample.JPG'

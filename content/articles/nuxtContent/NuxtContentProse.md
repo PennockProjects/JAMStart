@@ -1,15 +1,18 @@
 ---
 title: NuxtContent Prose and Tailwind Typographic
-topic: NuxtContent
 description: Tips and tricks in working with markdown generated HTML by Nuxt Content, NuxtContent, and Tailwind Typographic prose.
-createDate: 2024-05-17 10:00
-isToc: true
-tags:
+topic: Nuxt Content
+format: Cheat Sheet
+keywords:
+  - Nuxt_js
+  - Vue_js
   - NuxtContent
-  - Tailwind
-  - Prose
+  - Typography
+  - Tailwind_css
   - Markdown
-
+  - Prose
+createDate: 2024-05-17
+isToc: true
 ---
 
 When using the [Nuxt Content](https://nuxt.com/modules/content) module with the [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) module I encountered some issues in my usage and implemented methods for my taste.

@@ -5,14 +5,8 @@
         <NuxtLink to="/" class="link">Pennock Projects</NuxtLink>
       </li>    
       <li>
-        <NuxtLink to="/code" class="link">Code</NuxtLink>
+        <NuxtLink to="/articles" class="link">Articles</NuxtLink>
       </li>
-      <li>
-        <NuxtLink to="/ops" class="link">Ops</NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/contenttips" class="link">Content</NuxtLink>
-      </li>      
       <li>
         <NuxtLink to="/gitprojects" class="link">Git</NuxtLink>
       </li>
@@ -28,6 +22,6 @@
 
 <style scoped>
 .link {
-  @apply p-1 hover:bg-gray-200 dark:hover:bg-gray-800 text-2xl sm:text-base
+  @apply p-1 hover:bg-gray-200 dark:hover:bg-gray-800 text-sm md:text-base
 }
 </style>

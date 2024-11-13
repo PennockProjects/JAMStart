@@ -1,13 +1,17 @@
 ---
-title: Emojis for Transport, Symbols, Sky, Electronics, and Office
+title: Markdown Emojis (2/2)
 description: Transport, Symbols, Sky, Electronics, and Office Emojis for NuxtContent Markdown - part 2
 topic: Markdown
+format: Cheat Sheet
+keywords:
+  - NuxtContent
+  - Emojis
 isToc: true
-createDate: 2023-06-22 11:00:00
+createDate: 2023-06-22
 createAuthor: John Pennock
 ---
 
-[Part 1 - Emojis for People, Animals, Plants, Food, and Places](/contenttips/emoji1)
+[Part 1 - Emojis for People, Animals, Plants, Food, and Places](/articles/nuxtcontent/emoji1)
 
 ## Transport
 |    Markdown          |   Emoji    |
