@@ -3,10 +3,11 @@ title: Site Build Notes
 description: Developer notes about building and modules used to build this site
 topic: Development
 isToc: true
+isManualImage: true
 version: 1.2
 createDate: 2024-05-06 
 createAuthor: John Pennock
-editDate: 2024-09-25 
+editDate: 2024-11-18 
 editAuthor: John Pennock
 image: '/images/constructionsite.jpg'
 imageAlt: A large building construction site
@@ -241,3 +242,42 @@ For example:
 }
 </style>
 ```
+
+## Social Share Buttons
+Since each page has custom metadata, I also wanted convenience buttons to quickly share the page on social media. [Stefano Bartoletti Nuxt Social Share module](https://nuxt.com/modules/nuxt-social-share){:target="_blank"} was a good and easy as following the instructions to add the module. Then add the component into the page template.
+
+The terminal command I issued.
+
+```shell
+npx nuxi@latest module add nuxt-social-share
+```
+
+`nuxt.config.ts` entries required 
+
+```ts
+  modules: [
+    '@stefanobartoletti/nuxt-social-share'
+  ],
+
+  socialShare: {
+    baseUrl: 'https://pennockprojects.com'
+  }
+```
+
+Here is the usage within the code.
+
+```vue
+<template>
+/<!-- snip -->
+  <SocialShare
+    v-for="network in ['facebook', 'x', 'linkedin', 'email']"
+    :key="network"
+    :label="false"
+    :network="network"
+    :styled="true"
+  />
+<!-- snip -->
+</template>
+```
+
+## Nuxt PDF

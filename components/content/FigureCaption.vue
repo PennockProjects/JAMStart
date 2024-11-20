@@ -18,7 +18,7 @@ version: 1.0
 
 <style scoped>
 .figure-all {
-  @apply border border-dashed dark:border-gray-800 p-2 m-0 w-full
+  @apply p-2 m-0 w-full
 }
 
 .caption-container {

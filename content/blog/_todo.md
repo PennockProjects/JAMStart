@@ -9,6 +9,7 @@ createAuthor: John Pennock
 
 ## ToDo - the list not Dorthey's dog
 - google analytics
+- Share button light mode
 - article length
 - search
 - email and distribution list

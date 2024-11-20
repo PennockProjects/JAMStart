@@ -98,7 +98,7 @@ onMounted(() => {
       <article class="mx-auto">
         <div class="grid grid-cols-10 gap-4">
           <div class="col-span-10 prose dark:prose-invert lg:prose-xl mx-auto">
-            <h1 class="article-header text-center">{{ doc.title }}</h1>
+            <h1 class="article-header text-center" v-if="!doc.isManualTitle">{{ doc.title }}</h1>
             <div class='text-sm text-center mb-1' v-if="doc.createAuthor || doc.createDate">
               <span v-if="doc.createAuthor">by {{ doc.createAuthor }}</span>
               <span v-if="doc.createDate">&nbsp;{{  new Date(doc.createDate).toLocaleDateString() }}</span>
@@ -136,7 +136,6 @@ onMounted(() => {
                   :key="network"
                   :label="false"
                   :network="network"
-                  :styled="true"
                 />
               </span>
             </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-2 mb-2 container mx-auto max-w-4xl">
+  <div class="mt-2 mb-2 container mx-auto">
     <header class="flex justify-between items-start sm:items-center">
       <div class="flex items-center sm:space-x-12">
         <div class="hidden sm:block">
