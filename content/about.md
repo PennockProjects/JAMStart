@@ -49,5 +49,6 @@ What tools and software did I use to build this blog?
 Inspired by Udemy [course](https://www.udemy.com/course/master-nuxt-full-stack-complete-guide/learn/lecture/40391596#overview) *Unlock Nuxt 3 & Vue Mastery: Build a Markdown Blog-Portfolio and Supabase Finance Tracker*
 
 ## Contact me
-- [Email](mailto:pennockprojects@gmail.com)
+- [Email](mailto:info@pennockprojects.com)
 - [Twitter @pennockprojects](https://twitter.com/PennockProjects){:target="_blank"}
+- [Facebook](https://www.facebook.com/profile.php?id=61567777764252){:target="_blank"}

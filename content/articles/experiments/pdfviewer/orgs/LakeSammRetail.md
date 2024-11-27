@@ -1,6 +1,7 @@
 ---
 title: Lake Sammamish Retail
 description: This is an experimental or page for the fictional Lake Sammamish Retail space material safety data sheets (MSDS and SDS)
+isListExclude: true
 --- 
 
 
@@ -12,11 +13,11 @@ Lake Sammamish Retail Space - 3302 E Lake Sammamish Pkwy SE, Sammamish, WA 98075
 
 ## Safety Data Sheets
 ::button-bank
-[![A single black Sharpie Marker](/pdf/Sharpie.jpg)](/sds/sharpie)
+[![A single black Sharpie Marker](/pdf/Sharpie.jpg)](/experiments/dgt/sds/sharpie)
 Sharpie
 ::
 ::button-bank
-[![A tin can of WD-40](/pdf/WD40.jpg)](/sds/wd40)
+[![A tin can of WD-40](/pdf/WD40.jpg)](/experiments/dgt/sds/wd40)
 WD-40
 ::
 
@@ -24,5 +25,5 @@ WD-40
 {{ Description }}
 
 ### DGT Properties
-- [DGT Properties Home](/dgt)
-- [Riviera Apartments](/orgs/riviera)
+- [DGT Properties Home](/articles/experiments/pdfviewer/dgt)
+- [Riviera Apartments](/articles/experiments/pdfviewer/orgs/riviera)

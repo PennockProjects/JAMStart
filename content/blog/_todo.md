@@ -12,7 +12,7 @@ createAuthor: John Pennock
 - Share button light mode
 - article length
 - search
-- email and distribution list
 - article common - a list of other Posts or Articles around this topic - NuxtContent custom component
 - unit tests
+- info@pennockprojects.com
 

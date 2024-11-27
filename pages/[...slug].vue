@@ -129,8 +129,7 @@ onMounted(() => {
           </div>
           <div class="col-span-10">
             <div class="mt-2 text-center">
-              <span class="text-xl mr-2">Share</span>
-              <span class="inline-flex">
+              <span class="inline-flex socialsharebank">
                 <SocialShare
                   v-for="network in ['facebook', 'x', 'linkedin', 'email']"
                   :key="network"
@@ -154,5 +153,8 @@ onMounted(() => {
 <style scoped>
 h1.article-header {
   margin-bottom: 0;
+}
+.socialsharebank > a {
+  @apply mr-3
 }
 </style>

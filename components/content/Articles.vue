@@ -22,7 +22,7 @@ const targetPath = (props.path == '/articles' || props.path == '/ops' || props.p
       <ul>
         <li class="article-list" v-for="article in list" :key="article._path">
           <NuxtLink 
-            v-if="article._path != targetPath"
+            v-if="article._path != targetPath && !article.isListExclude"
             :to="article._path" 
             class="grid grid-cols-12 border-b hover:bg-gray-00 dark:hover:bg-gray-600"
           >
