@@ -1,5 +1,6 @@
 <script setup>
   import { VPdfViewer, VPVBaseProps, useLicense } from '@vue-pdf-viewer/viewer';
+  const runtimeConfig = useRuntimeConfig()
 
   const props = defineProps({ 
     ...VPVBaseProps, 
@@ -10,8 +11,7 @@
     }
   })
 
-  const licenseKey = '20f433a9-1401-4652-a6cc-7a9d909f13e1';
-  // props.licenseKey ?? import.meta.env.VITE_VPV_LICENSE ?? 
+  const licenseKey = props.licenseKey ?? runtimeConfig.public.vuePdfViewerLicenseKey 
   
   // useLicense must be used here to ensure proper license 
   // initialization before the component renders.

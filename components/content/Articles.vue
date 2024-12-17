@@ -14,7 +14,7 @@ const targetPath = (props.path == '/articles' || props.path == '/ops' || props.p
 <template>
   <ContentList v-slot="{list}" :path="targetPath" :sort="sort">
     <section class="not-prose font-mono mr-2 md:mr-8">
-      <div class="grid grid-cols-12 font-light text-xs md:text-lg/9 border-b">
+      <div class="grid grid-cols-12 font-light text-sm capitalize italic md:text-lg/10 border-b">
         <div class="col-span-6 md:col-span-8">article</div>
         <div class="col-span-3 md:col-span-2">topic</div>
         <div class="col-span-3 md:col-span-2">format</div>

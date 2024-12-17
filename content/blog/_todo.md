@@ -8,11 +8,12 @@ createAuthor: John Pennock
 ---
 
 ## ToDo - the list not Dorthey's dog
-- google analytics
-- Share button light mode
+- web analytics - prove it generates CloudFlare analytics
 - article length
 - search
 - article common - a list of other Posts or Articles around this topic - NuxtContent custom component
 - unit tests
-- info@pennockprojects.com
+- create blog template for public use
+- reorganize top level to 'projects', 'blog', 'about'
+  - projects should have articles and git projects, Cheat Sheets, etc. topic based
 

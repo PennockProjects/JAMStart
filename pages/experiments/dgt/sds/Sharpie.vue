@@ -1,17 +1,18 @@
 <script setup>
+import { VPdfViewer } from '@vue-pdf-viewer/viewer';
 definePageMeta({
   layout: 'sdslayout'
 })
 
+const pdfSrc = ref("/pdf/Sharpie_3000.pdf")
+
 </script>
 
 <template>
-  <div class="w-full">
-    <h1>Sharpie</h1>
-    <embed src="/pdf/Sharpie_3000.pdf" width="100%" height="900px" />
+  <!-- PDF works with client side only -->
+   <div>
+    <AppPdfViewer :src="pdfSrc" />
   </div>
 </template>
 
-<style>
-
-</style>
+<style></style>

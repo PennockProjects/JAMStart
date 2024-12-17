@@ -281,3 +281,31 @@ Here is the usage within the code.
 ```
 
 ## Nuxt PDF
+
+
+## CloudFlare Analytics
+
+Install
+
+```shell
+npm i nuxt-cloudflare-analytics
+```
+
+Update `nuxt.config.js`
+```js
+{
+  modules: [
+    'nuxt-cloudflare-analytics'
+  ],
+  cloudflareAnalytics: {
+    // See below for more options
+    token: 'your-token', // Example 1a2b3v4a5er6ac7r8afd
+  }
+}
+```
+
+
+## `web-vitals`
+```shell
+npm install web-vitals
+```
