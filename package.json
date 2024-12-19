@@ -5,6 +5,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "dev_prod": "nuxt dev --dotenv .env.local",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -15,6 +16,7 @@
     "@stefanobartoletti/nuxt-social-share": "^1.2.0",
     "@vue-pdf-viewer/viewer": "^1.7.0",
     "nuxt": "^3.11.1",
+    "nuxt-cloudflare-analytics": "^1.0.8",
     "remark-unwrap-images": "^4.0.0",
     "sitemap": "^8.0.0",
     "vue": "^3.4.21",

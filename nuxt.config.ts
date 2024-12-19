@@ -1,5 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
+    "@nuxt/content",
+    "@nuxt/image",
+    '@stefanobartoletti/nuxt-social-share',
+    'nuxt-cloudflare-analytics'
+  ],
+
   app: {
     pageTransition: {name: 'page', mode: 'out-in'}
   },
@@ -8,7 +17,11 @@ export default defineNuxtConfig({
     classSuffix: ''
   },
 
-  compatibilityDate: '2024-08-13',
+  cloudflareAnalytics: {
+    token: 'fbd0a13f6db34e2aa3f50a6b20bd174a',
+  },
+
+  compatibilityDate: '2024-12-16',
 
   content: {
     markdown: {
@@ -32,14 +45,6 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode',
-    "@nuxt/content",
-    "@nuxt/image",
-    '@stefanobartoletti/nuxt-social-share'
-  ],
-
   nitro: {
     prerender: {
       routes: ['/sitemap.xml']
@@ -49,6 +54,13 @@ export default defineNuxtConfig({
   router: {
     options: {
       scrollBehaviorType: 'smooth'
+    }
+  },
+
+  runtimeConfig: {
+    // Keys within public, will be also exposed to the client-side
+    public: {
+      vuePdfViewerLicenseKey: '20f433a9-1401-4652-a6cc-7a9d909f13e1'
     }
   },
 
