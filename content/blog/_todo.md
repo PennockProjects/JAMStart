@@ -15,5 +15,4 @@ createAuthor: John Pennock
 - create blog template for public use
 - reorganize top level to 'projects', 'blog', 'about'
   - projects should have articles and git projects, Cheat Sheets, etc. topic based
-- blog template (public) vs. my blog (private)
-
+- blog template (public) vs. my blog (private) 
