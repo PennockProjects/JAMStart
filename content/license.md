@@ -1,11 +1,11 @@
 ---
-title: Pennock Projects License
-description: All code, discussions, examples, tips, etc on this website, unless specifically documented, are released under the MIT license
+title: JAMStart License
+description: All code, discussions, examples, tips, images, text in this repo, unless specifically documented, are released under the MIT license
 --- 
 
 ## Released under the MIT License
 
-Copyright (c) 2024 John Pennock
+Copyright (c) 2025 John P. Pennock
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

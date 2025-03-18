@@ -1,13 +1,11 @@
 ---
-title: Github
-description: Public Pennock Projects on GitHub 
----
+title: Git Projects
+description: The Git Projects page is meant as an example of Markdown content page using an external API and displaying external data using a custom content component.
+--- 
 
-::MonkInset{size = 'sm'}
-![Pennock Projects Logo as a Circuit Board in the Shape of Two Letter Ps](/images/PPNDLogoSm.png)
-::
+{{ description }}
 
-This is a collection of my public [GitHub projects](https://github.com/PennockProjects). Of particular note, the project called 'blog' contains the source code for this site.  Other projects are usually various personal or public endeavors.  I expect my portfolio of projects to increase over time.  I have archived older projects.
+The `app/component/GitList.vue` component uses `useFetch()` to fetch public GitHub repositories (by default it fetches Pennock Projects repositories including the JAMStart repo, by this can be changed.)  It is invoked from the content Markdown page with `::GitList`
 
-
-::ProjectList
+## Pennock Project Repos
+::GitList

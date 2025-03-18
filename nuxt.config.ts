@@ -1,10 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    '@nuxtjs/tailwindcss',
+    // '@nuxtjs/sitemap',
+    "@nuxt/content",    // <-- Must be after @nuxtjs/sitemap
     '@nuxtjs/color-mode',
-    "@nuxt/content",
-    "@nuxt/image",
+    '@nuxtjs/mdc',
+    '@nuxtjs/tailwindcss',
     '@stefanobartoletti/nuxt-social-share',
     'nuxt-cloudflare-analytics'
   ],
@@ -24,31 +25,39 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-12-16',
 
   content: {
-    markdown: {
-      anchorLinks: false,
-      remarkPlugins: ['remark-unwrap-images']
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            // Default theme (same as single string)
+            default: 'min-light',
+            // Theme used if `html.dark`
+            dark: 'min-dark',
+            // Theme used if `html.sepia`
+            // sepia: 'monokai'
+          },
+          langs: [ 
+            'json', 'js', 'typescript', 'html', 'css', 'vue', 'shell', 'mdc', 'markdown', 'yaml',
+            'asm', 'c', 'cpp', 'python', 'reg', 'terraform'
+          ]
+        },
+        remarkPlugins: {
+          'remark-unwrap-images': {}
+        },
+        toc: {
+          depth: 3,
+        }        
+      }
     },
-    highlight: {
-      theme: {
-        // Default theme (same as single string)
-        default: 'min-light',
-        // Theme used if `html.dark`
-        dark: 'min-dark',
-        // Theme used if `html.sepia`
-        // sepia: 'monokai'
-      },
-      langs: [ 
-        'json', 'js', 'typescript', 'html', 'css', 'vue', 'shell', 'mdc', 'markdown', 'yaml',
-        'asm', 'c', 'cpp', 'python', 'reg', 'terraform']
+    renderer: {
+      anchorLinks: false
     }
   },
 
   devtools: { enabled: true },
 
-  nitro: {
-    prerender: {
-      routes: ['/sitemap.xml']
-    }
+  future: {
+    compatibilityVersion: 4
   },
 
   router: {
@@ -64,7 +73,12 @@ export default defineNuxtConfig({
     }
   },
 
+  site: { 
+    url: 'https://placeholder.jamstart.com',
+    name: 'JAMStart'
+  },
+
   socialShare: {
-    baseUrl: 'https://pennockprojects.com'
+    baseUrl: 'https://placeholder.jamstart.com'
   }
 })

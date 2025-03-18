@@ -1,12 +1,14 @@
 ---
-title: Blog Posts
-description: Pennock Projects most recent blog posts
----
+title: Blog
+description: The blog page shows a list of all the blog posts in the 'blog' folder.  It used the Nuxt Content custom control `CollectionList` which defaults showing all markdown in the 'blog' folder and any children folders.
+--- 
 
-::MonkInset
+::MonkInset{size= 'large'}
 :speech_balloon:
 ::
 
-This is a list of my recent blog posts.  I generally blog about what I'm learning and implementing, but it can be any topic.
+{{ description }}
 
-::PostList
+### Blog Posts
+
+::CollectionList
