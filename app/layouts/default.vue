@@ -2,9 +2,6 @@
   <div class="mt-2 mb-2 container mx-auto max-w-4xl">
     <header class="flex justify-between items-start sm:items-center">
       <div class="flex items-center sm:space-x-12">
-        <div class="hidden sm:block">
-          <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-gray-200 dark:hover:bg-gray-800">JAMStart</NuxtLink>
-        </div>
         <TopMenu />
       </div>
       

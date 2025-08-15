@@ -1,10 +1,8 @@
 ---
-title: Full Template # SEO
-description: "The Templates's description" # SEO
+title: Full Template Example # SEO
+description: "Full Templates description" # SEO
 project: "JAMStart" # for Hubs
-projects: [JAMStart, QRPDF] # articles and posts applied to projects
-format: "'Hub' 'Code' 'Quick Ref' 'How-to' 'Blog' 'Article' 'Newsletter'"
-keywords: [NuxtContent, Vue_js, Nuxt_js, Metadata, SEO, SocialShare, OpenGraph]
+topic: NuxtContent
 isToc: true
 isManualImage: false # normally the image is automatically displayed
 version: 1.0  #optional for tracking
@@ -23,7 +21,7 @@ xDescription: Template Twitter Description
 xImage: Template Twitter Image Link - ideally 1200 x 600 for large card, or 800 x 800 square for summary
 xImageAlt: Template Twitter Image Alt - use only if 'imageAlt' not sufficient
 xCard: Template Twitter Card - 'summary' (default) or 'summary_large_image' 
-xCreatorHandle: Template Twitter Creator handle, default @JohnPennock
+xCreatorHandle: Template Twitter Creator handle, default creator handle
 ---
 
 ## This is the full extended template

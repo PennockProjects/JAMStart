@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    // '@nuxtjs/sitemap',
+    '@nuxtjs/sitemap',
     "@nuxt/content",    // <-- Must be after @nuxtjs/sitemap
     '@nuxtjs/color-mode',
     '@nuxtjs/mdc',
@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   },
 
   cloudflareAnalytics: {
-    token: 'fbd0a13f6db34e2aa3f50a6b20bd174a',
+    token: 'putYourAnalyticsKeyHere',
   },
 
   compatibilityDate: '2024-12-16',
@@ -60,16 +60,17 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
 
-  router: {
-    options: {
-      scrollBehaviorType: 'smooth'
+  nitro: {
+    prerender: {
+      autoSubfolderIndex: false,
+      crawlLinks: true,
+      routes: ['/sitemap.xml', '/', '/about', '/contact', '/privacy', '/terms']
     }
   },
 
-  runtimeConfig: {
-    // Keys within public, will be also exposed to the client-side
-    public: {
-      vuePdfViewerLicenseKey: '20f433a9-1401-4652-a6cc-7a9d909f13e1'
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
     }
   },
 

@@ -4,7 +4,7 @@ description: This is the default home page for the JAMStart repo which is a stat
 topic: General
 ---
 
-*** Replace this content to your home content ***
+***Replace this ~~content~~ to your home content***
 
 ## H2 Title 
 
@@ -20,3 +20,8 @@ Paragraph - This is an example paragraph written in Markdown.
 ```bash
 git clone https://github.com/PennockProjects/JAMStart.git
 ```
+
+[info]{.info}
+[warn]{.warn}
+[danger]{.danger}
+[success]{.success}

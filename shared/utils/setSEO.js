@@ -6,11 +6,8 @@ export const setSEO = (metaPage, metaDefaults, routePath) => {
   let xImage = doc.xImage || doc.image || metaDefaults.image2x1
   let seoInput = {}
   
-  let keywords = doc && doc.keywords && Array.isArray(doc.keywords) ? metaDefaults.keywords.concat(doc.keywords) : metaDefaults.keywords.concat([]);
-  
   seoInput.author = doc.author || metaDefaults.author
   seoInput.creator = metaDefaults.creator
-  seoInput.keywords = keywords.toString()
   seoInput.ogTitle = (oTitle && oTitle != metaDefaults.title) ? `${metaDefaults.title} ${oTitle}` : metaDefaults.title
   seoInput.xTitle = (xTitle && xTitle != metaDefaults.title) ? `${metaDefaults.title} ${xTitle}` : metaDefaults.title
   seoInput.description = doc.description || metaDefaults.description;
@@ -38,7 +35,6 @@ export const setSEO = (metaPage, metaDefaults, routePath) => {
     description: seoInput.description,
     author: seoInput.author,
     creator: seoInput.crator,
-    keywords: seoInput.keywords,
     ogType: metaDefaults.ogType,
     ogTitle: seoInput.ogTitle,
     ogDescription: seoInput.ogDescription,

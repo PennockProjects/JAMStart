@@ -3,6 +3,10 @@ const props = defineProps({
   collection: {
     type: String,
     default: 'blog'
+  },
+  isShowTopic: {
+    type: Boolean,
+    default: false
   }
 })
 const route = useRoute()
@@ -10,7 +14,7 @@ const route = useRoute()
 const { data: docs } = await useAsyncData(props.collection+'-list', () => {
   return queryCollection('content')
     .where('path',  'LIKE', '/'+props.collection+'/%')
-    .select('title', 'path', 'description', 'meta', 'dateCreated')
+    .select('title', 'path', 'description', 'topic', 'dateCreated')
     .all()
 })
 
@@ -55,8 +59,9 @@ const posts = computed(() => {
     <section class="not-prose font-mono mr-2 md:mr-8">
       <div class="grid grid-cols-10 font-light text-xs/7 md:text-lg/9 border-b">
         <div class="col-span-2">date</div>
-        <div class="hidden md:block md:col-span-2">topic</div>
-        <div class="col-span-8 md:col-span-6">title</div>
+        <div v-if="props.isShowTopic" class="hidden md:block md:col-span-2">topic</div>
+        <div v-if="props.isShowTopic" class="col-span-8 md:col-span-6">title</div>
+        <div v-else class="col-span-8">title</div>
       </div>
       <ul>
         <li v-for="post in posts" :key="post.path">
@@ -67,8 +72,9 @@ const posts = computed(() => {
             <div class="col-span-2 text-xs/7 md:text-lg/9 font-light">
               {{ post.isDisplayYear ? post.monthDayYear : post.monthDay }}
             </div>
-            <div class="hidden md:block md:col-span-2 font-light">{{ post.topic }}</div>
-            <div class="col-span-8 md:col-span-6 font-semibold">{{ post.title }}</div>
+            <div v-if="props.isShowTopic" class="hidden md:block md:col-span-2 font-light">{{ post.topic }}</div>
+            <div v-if="props.isShowTopic" class="col-span-8 md:col-span-6 font-semibold">{{ post.title }}</div>
+            <div v-else class="col-span-8 font-semibold">{{ post.title }}</div>
           </NuxtLink>
         </li>
       </ul>

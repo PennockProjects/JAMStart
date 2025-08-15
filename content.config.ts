@@ -1,15 +1,17 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
-// import { asSitemapCollection } from '@nuxtjs/sitemap/content'
+import { asSitemapCollection } from '@nuxtjs/sitemap/content'
 
 export default defineContentConfig({
   collections: {
-    content: defineCollection({
-      source: '**',
-      type: 'page',
-      // JAMStart custom Markdown Frontmatter Schema
-      schema: z.object({
-        dateCreated: z.date()
+    content: defineCollection(
+      asSitemapCollection({
+        type: 'page',
+        source: '**',
+        schema: z.object({
+          topic: z.string(),
+          dateCreated: z.date()
+        })        
       })
-    })
+    )
   },
 })

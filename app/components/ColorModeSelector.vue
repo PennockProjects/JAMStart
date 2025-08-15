@@ -30,7 +30,7 @@ const toggleMode = () => colorMode.preference = nextMode.value
       @click="toggleMode" 
       @mouseenter="isShowNextModeLabel = true"
       @mouseleave="isShowNextModeLabel = false"
-      class="hover:bg-gray-200 dark:hover:bg-gray-600 px-2 py-1 text-gray-500 text-4xl sm:text-base">
+      class="hover:bg-gray-200 dark:hover:bg-gray-600 px-2 py-1 text-gray-500 text-base">
         {{ nextModeIcon }}
     </button>
   </div>

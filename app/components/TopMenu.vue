@@ -1,9 +1,13 @@
 <template>
-  <nav class="font-mono">
-    <ul class="flex flex-col sm:flex-row md:space-x-4">
-      <li class="sm:hidden">
-        <NuxtLink to="/" class="link">JAMStart</NuxtLink>
-      </li>    
+  <nav class="font-mono flex flex-row">
+    <ul class="flex flex-row space-x-4">
+      <li class="inline">
+        <NuxtLink to="/" class="link p-0 m-0">
+          <div class="inline-block">
+            <img class="max-w-7 md:max-w-8 max-h-7 md:max-h-8" src="/images/JAMStartLogoClear.png" />
+          </div>
+        </NuxtLink>
+      </li>
       <li>
         <NuxtLink to="/about" class="link">About</NuxtLink>
       </li>

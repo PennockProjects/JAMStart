@@ -6,6 +6,7 @@ description: The blog page shows a list of all the blog posts in the 'blog' fold
 ::MonkInset{size= 'large'}
 :speech_balloon:
 ::
+***Replace this ~~content~~ to your blog content***
 
 {{ description }}
 

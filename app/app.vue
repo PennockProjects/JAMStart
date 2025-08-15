@@ -5,7 +5,6 @@ const metaDefaults = {
   siteName: 'JAMStart',
   title: 'JAMStart',
   description: 'JAMStart is a template for a Nuxt.js Static Site Generated with Markdown content',
-  keywords: ['blog'],
   author: 'JAMStart Author Name',
   creator: 'JAMStart',
   rootUrl: "https://placeholder.jamstart.com",
@@ -96,22 +95,62 @@ body {
   font-family: 'Roboto';
 }
 
+/* text and background for light and dark modes */
 body {
   @apply bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-300
 }
 
+/* alert colors */
+.info {
+  @apply inline-block px-5 py-1 bg-blue-100 dark:bg-blue-700 text-blue-700 dark:text-blue-200 border-t-4 border-blue-500
+}
+
+.danger {
+  @apply inline-block px-5 py-1 bg-red-100 dark:bg-red-700 text-red-700 dark:text-red-200 border-t-4 border-red-500
+}
+
+.warn {
+  @apply inline-block px-5 py-1 bg-yellow-100 dark:bg-yellow-700 text-yellow-700 dark:text-yellow-200 border-t-4 border-yellow-500
+}
+
+.success { 
+  @apply inline-block px-5 py-1 bg-green-100 dark:bg-green-700 text-green-700 dark:text-green-200 border-t-4 border-green-500
+}
+
+
+
+/* code block remove last extraneous line  */
 .prose code::before, .prose code::after {
   content: "";
 }
 
+/* code blocks styling for font  */
 .prose code:not(pre *) {
   @apply px-1.5 py-1 m-0 rounded
 }
 
+/* code blocks styling for light modes  */
 .prose code {
-  @apply text-black dark:text-white
+  @apply text-black dark:text-white font-mono
 }
 
+/* line numbers in code blocks  */
+code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 1rem;
+  margin-right: 1.5rem;
+  display: inline-block;
+  text-align: right;
+  @apply text-gray-300 dark:text-gray-500
+}
+
+/* Page Transitions */
 .page-enter-active {
   animation: bounce-in .7s;
 }
@@ -140,15 +179,4 @@ body {
     transform: scale(0);
   }
 }
-
-/* .page-enter-active,
-.page-leave-active {
-  transition: all 0.3s;
-}
-
-.page-enter-from,
-.page-leave-to {
-  opacity: 0.5;
-  filter: grayscale(1);
-} */
 </style>
