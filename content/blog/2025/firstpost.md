@@ -2,10 +2,18 @@
 title: First Post Example
 description: The first post example for the blog.  It highlights the use of front-matter, markdown, and code markdown.
 topic: General
-dateCreated: 2025-03-03
+isToc: true
+dateCreated: 2025-01-06
+image: /images/toastjam.jpg
+imageAlt: Toast slices and jar of jam
+
 ---
 
-### This about some code
+## First Post Title
+
+This is the first post example for the blog. It highlights the use of front-matter, markdown, and code markdown.
+
+### First Post Subtitle
 
 The block below should show up as a code block on the web site.
 

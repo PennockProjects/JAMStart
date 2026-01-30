@@ -3,25 +3,25 @@
 const metaDefaults = {
   isProdEnv: process.env.NODE_ENV === "production",
   siteName: 'JAMStart',
-  title: 'JAMStart',
-  description: 'JAMStart is a template for a Nuxt.js Static Site Generated with Markdown content',
-  author: 'JAMStart Author Name',
-  creator: 'JAMStart',
-  rootUrl: "https://placeholder.jamstart.com",
+  title: 'JMSTseoTitle',
+  description: 'JMSTseoDescription',
+  author: 'JMSTseoAuthor',
+  creator: 'JMSTseoCreator',
+  rootUrl: "https://JMSTsiteURL.com",
   robots: 'index, follow',
-  copyright: '© 2025 JAMStart',
+  copyright: '© 2026 JMSTseoCopyright',
   ogType: 'article',
   imageRoot: '/images',
-  image2x1: '/images/PennockProjectsFB.jpg',
+  image2x1: '/images/JMSTimage2x1.jpg',
   image2x1Width: 1200,
   image2x1Height: 600,
-  image1x1: '/images/PennockProjectsLogo.png',
-  image1x1Width: 800,
-  image1x1Height: 800,
+  image1x1: '/images/JMSTimage1x1.png',
+  image1x1Width: 1024,
+  image1x1Height: 1024,
   imageAlt: 'JAMStart Logo',
   twitterCard: 'summary_large_image',
-  twitterSiteHandle: '@SiteXJAMStartHandle',
-  twitterCreatorHandle: '@AuthorXJAMStartHandle'
+  twitterSiteHandle: '@JMSTsiteHandleX',
+  twitterCreatorHandle: '@JMSTcreateHandleX'
 }
 
 // allow children components readonly access to social defaults.
@@ -35,6 +35,14 @@ useHead({
     lang: 'en'
   },
   link: [
+    // The various favicons
+    // translate html link elements to objects.
+    // for example an html link element:
+    //      <link rel="shortcut icon" href="/favicon.ico" />
+    // becomes:
+    //      { rel: 'shortcut icon', href: '/favicon.ico' }
+
+    // JMSTfavIcon start favicons
     {
       rel: 'icon',
       type: 'image/x-icon',
@@ -62,15 +70,32 @@ useHead({
       rel: 'manifest',
       href: '/site.webmanifest'
     },
+    // JMSTfavIcon end favicons
+
+    // Preconnect to Google Fonts
+    // preconnect helps speed up font loading.
+    // If you would like to use a different Google Font,
+    // go to https://fonts.google.com/, select your font,
+    // and then click on "Embed" to get the appropriate link tags.
+    // Replace the following two link objects with the ones provided by Google Fonts.
+    // Make sure to keep the 'preconnect' link for best performance.
+
+    // JMSTfont start default Font
     {
       rel: 'preconnect',
       href: 'https://fonts.googleapis.com'
+    },
+    {
+      rel: 'preconnect',
+      href: 'https://fonts.gstatic.com',
+      crossorigin: ''
     },
     {
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap',
       crossorigin: ''
     }
+    // JMSTfont end default Font
   ]
 })
 
@@ -90,6 +115,7 @@ useSeoMeta({
 </template>
 
 <!-- Global Styles -->
+<!-- JMSTfont replace 'Roboto' with your Google Font pre-connected global font-family name -->
 <style>
 body {
   font-family: 'Roboto';

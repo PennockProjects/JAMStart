@@ -23,6 +23,7 @@ logs
 .env.*
 !.env.example
 
+
 # VS Code
 .vscode
 
@@ -31,3 +32,6 @@ logs
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Pennock Projects
+.pproj

@@ -1,19 +1,34 @@
 {
   "name": "jamstart-app",
-  "private": true,
-  "type": "module",
+  "version": "0.0.1",
+  "description": "A starter web application using Nuxt, Markdown content, Tailwind CSS, and deployment to AWS S3.",
+  "license": "MIT",
+  "homepage": "https://pennockprojects.com/projects/jamstart",
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
-    "dev_prod": "nuxt dev --dotenv .env.local",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "clean:dev": "aws s3 rm s3://JMSTprodS3 --recursive",
+    "clean:stage": "aws s3 rm s3://JMSTstageS3 --recursive",
+    "copy:build:dev": "aws s3 sync .output/public s3://JMSTdevS3 --delete",
+    "copy:build:stage": "aws s3 sync .output/public s3://JMSTstageS3 --delete",
+    "copy:stage:prod": "aws s3 sync s3://JMSTstageS3 s3://JMSTprodS3 --delete",
+    "deploy:build:dev": "npm run copy:build:dev && npm run fix:dev",
+    "deploy:build:stage": "npm run copy:build:stage && npm run fix:stage",
+    "deploy:stage:prod": "npm run copy:stage:prod && npm run invalidate:prod",
+    "diff:local:prod": "npx sitemap-diff .output/public/sitemap.xml https://JMSTprodS3/sitemap.xml",
+    "diff:dev:prod": "npx sitemap-diff http://JMSTdevS3/sitemap.xml https://JMSTprodS3/sitemap.xml",
+    "diff:stage:prod": "npx sitemap-diff s3://JMSTstageS3/sitemap.xml https://JMSTprodS3/sitemap.xml",
+    "fix:dev": "npx nuxtss-s3-fix s3://JMSTdevS3 -e -2",
+    "fix:stage": "npx nuxtss-s3-fix s3://JMSTstageS3 -e -2",
+    "invalidate:prod": "aws cloudfront create-invalidation --distribution-id JMSTCloudFrontId --paths '/*'",
+    "precheck:prod": "npm run generate && npm run diff:local:prod",
+    "build": "nuxt build"
   },
   "dependencies": {
     "@nuxt/content": "^3.6.3",
     "@nuxtjs/sitemap": "^7.4.3",
     "@stefanobartoletti/nuxt-social-share": "^1.2.0",
+    "better-sqlite3": "^12.5.0",
     "nuxt": "^3.18.1",
     "nuxt-cloudflare-analytics": "^1.0.8",
     "remark-unwrap-images": "^4.0.0",
@@ -21,9 +36,29 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^0.0.1",
     "@nuxtjs/color-mode": "^3.3.3",
     "@nuxtjs/tailwindcss": "^6.11.4",
+    "@pennockprojects/nuxtss-s3-fix": "^1.0.0",
+    "@pennockprojects/sitemap-diff": "^0.8.0",
     "@tailwindcss/typography": "^0.5.13"
-  }
+  },
+  "private": true,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PennockProjects/jamstart.git"
+  },
+  "author": {
+    "name": "John Pennock",
+    "email": "info@pennockprojects.com",
+    "url": "https://pennockprojects.com"
+  },
+  "keywords": [
+    "nuxt",
+    "tailwindcss",
+    "markdown",
+    "aws s3",
+    "static site",
+    "text cms"
+  ]
 }

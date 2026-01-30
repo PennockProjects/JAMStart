@@ -4,7 +4,7 @@
       <li class="inline">
         <NuxtLink to="/" class="link p-0 m-0">
           <div class="inline-block">
-            <img class="max-w-7 md:max-w-8 max-h-7 md:max-h-8" src="/images/JAMStartLogoClear.png" />
+            <img class="max-w-7 md:max-w-8 max-h-7 md:max-h-8" src="/images/JMSTimage1x1clear.png" />
           </div>
         </NuxtLink>
       </li>

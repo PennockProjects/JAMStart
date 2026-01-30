@@ -75,11 +75,15 @@ export default defineNuxtConfig({
   },
 
   site: { 
-    url: 'https://placeholder.jamstart.com',
-    name: 'JAMStart'
+    url: 'https://JMSTprodURL',
+    name: 'JMSTprodName'
+  },
+
+  sitemap: {
+    strictNuxtContentPaths: true
   },
 
   socialShare: {
-    baseUrl: 'https://placeholder.jamstart.com'
+    baseUrl: 'https://JMSTprodURL'
   }
 })

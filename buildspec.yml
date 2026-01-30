@@ -2,12 +2,24 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 20
     commands:
-      - npm install
+      - echo Install started on `date`
+      - npm install      
   build:
+    on-failure: ABORT
     commands:
+      - echo Build started on `date`
       - npm run generate
+  post_build:
+    on-failure: ABORT
+    commands:
+      - echo ----- post_build DEPLOY build to stage site on `date` -----
+      - npm run deploy:build:stage
+      - echo ----- post_build FIX stage site on `date` -----
+      - npm run fix:stage
 artifacts:
   files:
     - '**/*'
-  base-directory: 'dist'
+  base-directory: '.output/public'

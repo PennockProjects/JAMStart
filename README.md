@@ -1,81 +1,15 @@
 
+# JAMStart
 
-# Basics
+## Description
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+The JAMStart project is a starter static web site generated using Nuxt.js, Markdown, and git deployment.
 
-## Setup
+## Links
 
-Make sure to install the dependencies:
+- For guides on how to use JAMStart, please visit [JAMStart Project Documentation](https://pennockprojects.com/projects/jamstart)
+- To see this current JAMStart site in action, please visit the [JAMStart Demo Site](https://jamstart.pennockprojects.com)
+- The [JAMStart git repo](https://github.com/PennockProjects/JAMStart)
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-## JAMStart
-
-See [blog and instructions](https://pennockprojects.com/projects/jamstart)
+## Email
+If you would like to contact the author of JAMStart, please send an [email](mailto:info@pennockprojects.com)
