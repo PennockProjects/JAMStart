@@ -6,3 +6,5 @@ description: "The JAMStart Site is a starter project for for starting a new do-i
 ***Replace this ~~content~~ to your about content***
 
 {{ description }}
+
+This is version 0.0.3 of the JAMStart project.

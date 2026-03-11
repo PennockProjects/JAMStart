@@ -1,10 +1,51 @@
 ---
-title: JAMStart Terms and License
-description: All code, discussions, examples, tips, images, text in this repo, unless specifically documented, are released under the terms of usage and license.
+title: Copyright & Licensing Notice
+description: This is a detailed notice about the copyright and licensing for the content and code for this website, including the use of the MIT License for code and the Creative Commons Attribution-ShareAlike 4.0 License for content.
+dateCreated: 2026-02-25
 --- 
 
-***Replace this ~~content~~ and `LICENSE.txt` with your license and or terms***
+© [JMSTcopyrightYears] [JMSTcopyrightName]. All rights reserved unless otherwise noted.
 
-## Terms
+All written content, including blog articles and original media on this website, is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
+All source code, code snippets, service procedures, configuration examples, and downloadable code files are licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-## License
+---
+
+## Creative Commons Attribution-ShareAlike 4.0 (for Content)
+
+This means you are free to:
+
+Share — copy and redistribute the material in any medium or format
+
+Adapt — remix, transform, and build upon the material for any purpose, even commercially
+
+Under the following terms:
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license.
+
+Full license text:
+https://creativecommons.org/licenses/by-sa/4.0/
+
+---
+
+## MIT License (for Code)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

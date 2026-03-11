@@ -37,7 +37,7 @@ export default defineNuxtConfig({
             // sepia: 'monokai'
           },
           langs: [ 
-            'json', 'js', 'typescript', 'html', 'css', 'vue', 'shell', 'mdc', 'markdown', 'yaml',
+            'json', 'js', 'typescript', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'markdown', 'yaml',
             'asm', 'c', 'cpp', 'python', 'reg', 'terraform'
           ]
         },
@@ -53,6 +53,8 @@ export default defineNuxtConfig({
       anchorLinks: false
     }
   },
+
+  css: ['~/assets/css/main.css'],
 
   devtools: { enabled: true },
 

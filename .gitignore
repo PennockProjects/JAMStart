@@ -33,5 +33,5 @@ logs
 # Built Visual Studio Code Extensions
 *.vsix
 
-# Pennock Projects
+# Local Files
 .pproj

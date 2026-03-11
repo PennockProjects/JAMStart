@@ -6,9 +6,9 @@ topic: NuxtContent
 isToc: true
 isManualImage: false # normally the image is automatically displayed
 version: 1.0  #optional for tracking
-dateCreated: 2025-01-02
+dateCreated: 2026-01-02
 author: Template Article Author
-dateModified: 2025-01-03 # optional for when updated, dateCreated is required
+dateModified: 2026-01-03 # optional for when updated, dateCreated is required
 editor: Template Article Editor # optional, for second author
 image: Template Image Link, ideally 2x1
 imageAlt: Template Image Alt Text description

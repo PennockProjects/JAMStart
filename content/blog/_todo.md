@@ -3,8 +3,7 @@ title: To Do List for Blog
 description: A To Do List for the Blog
 topic: wish list
 format: List
-dateCreated: 2025-01-01
-author: John Pennock
+dateCreated: 2026-01-01
 ---
 
 ## ToDo - the list not Dorothy's dog

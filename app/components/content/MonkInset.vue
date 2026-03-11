@@ -1,6 +1,10 @@
 <!--
-MonkInset - a Nuxt.js NuxtContent component from Pennock Projects, MIT License, Copyright (c) 2024 John P. Pennock
-version: 1.0
+MonkInset - a Nuxt.js NuxtContent component from Pennock Projects
+  Version: 1.1
+  Copyright © 2024-2026 John Pennock
+  Licensed under the MIT License.
+  See https://opensource.org/licenses/MIT for details.
+
 -->
 <script setup>
 

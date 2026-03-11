@@ -7,7 +7,7 @@ description: The Git Projects page is meant as an example of Markdown content pa
 
 {{ description }}
 
-The `app/component/GitList.vue` component uses `useFetch()` to fetch public GitHub repositories (by default it fetches Pennock Projects repositories including the JAMStart repo, but this can be changed.)  It is invoked from the content Markdown page with `::GitList`
+The `app/component/GitList.vue` component uses `useFetch()` to fetch public GitHub repositories, change that component to get specific git repos.  It is invoked from the content Markdown page with `::GitList` as shown below
 
-## Pennock Project Repos
+## Git Repos
 ::GitList

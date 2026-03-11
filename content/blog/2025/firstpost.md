@@ -3,7 +3,7 @@ title: First Post Example
 description: The first post example for the blog.  It highlights the use of front-matter, markdown, and code markdown.
 topic: General
 isToc: true
-dateCreated: 2025-01-06
+dateCreated: 2026-01-06
 image: /images/toastjam.jpg
 imageAlt: Toast slices and jar of jam
 
