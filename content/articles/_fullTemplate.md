@@ -10,8 +10,8 @@ dateCreated: 2026-01-02
 author: Template Article Author
 dateModified: 2026-01-03 # optional for when updated, dateCreated is required
 editor: Template Article Editor # optional, for second author
-image: Template Image Link, ideally 2x1
-imageAlt: Template Image Alt Text description
+image: /images/placeholder.jpg # Template Image Link, ideally 2x1, 1200 x 600 or 1200 x 630
+imageAlt: 'Placeholder text' #Template Image Alt Text description
 ogTitle: Template Open Graph Title
 ogDescription: Template Open Graph Description
 ogImage: Template Open Graph Image Link - ideally 1200 x 630

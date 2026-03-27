@@ -67,23 +67,21 @@ JAMStart uses the following dependencies
 
 | Dependency | Description |
 | --- | --- |
-| `nuxt@^3.x`, `vue@^3.x`,`vue-router@&4.x` | Nuxt.js and Vue.js are the application foundation of the JAMStart project. |
-| `@nuxtjs/tailwindcss@^6.11.4` | Tailwind CSS. |
-| `@tailwindcss/typography@^0.5.13` | Tailwind CSS typography plugin. |
-| `@nuxt/content@^3.x` | Nuxt Content, converts Markdown content to HTML pages. |
+| `nuxt`, `vue`,`vue-router` | Nuxt.js and Vue.js are the application framework of the JAMStart project. |
+| `@nuxtjs/tailwindcss` | Tailwind CSS for Nuxt.js. |
+| `@tailwindcss/typography` | Tailwind CSS typography plugin. |
+| `@nuxt/content` | Nuxt Content, converts Markdown content to HTML pages. |
 | `remark-unwrap-images` | Simpler `<img />` markdown conversion. |
 | `better-sqlite3` | A performant SQLite3 library required for `@nuxt/content`. |
 | `@nuxtjs/color-mode` | Handles light/dark modes. |
 | `@stefanobartoletti/nuxt-social-share` | A Nuxt module for adding social sharing buttons to your application. |
 | `nuxt-cloudflare-analytics` | Cloudflare Analytics telemetry. |
 
-
-
 ### Deployment Dependencies
 These dependencies are used to build and deploy the JAMStart project.
 
 | Dependency | Description |
 | --- | --- |
-| `@nuxtjs/sitemap@` | Generates a sitemap to improve SEO and Social |
-| `@pennockprojects/nuxtss-s3-fix@^1.0.0` | A deployment tool for fixing Nuxt static sites on AWS S3. |
-| `@pennockprojects/sitemap-diff@^0.8.0` | A deployment tool generates sitemap differences. |
+| `@nuxtjs/sitemap` | Generates a sitemap to improve SEO and Social |
+| `@pennockprojects/nuxtss-s3-fix` | A deployment tool to fix Nuxt static sites on AWS S3. |
+| `@pennockprojects/sitemap-diff` | A deployment tool to generate sitemap differences. |

@@ -1,13 +1,15 @@
+import pkg from './package.json';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    '@nuxtjs/sitemap',
-    "@nuxt/content",    // <-- Must be after @nuxtjs/sitemap
-    '@nuxtjs/color-mode',
+    '@nuxtjs/sitemap', // <-- Must be after @nuxtjs/sitemap
+    "@nuxt/content", 
+    '@nuxtjs/color-mode', 
     '@nuxtjs/mdc',
-    '@nuxtjs/tailwindcss',
-    '@stefanobartoletti/nuxt-social-share',
-    'nuxt-cloudflare-analytics'
+    '@nuxtjs/tailwindcss', 
+    '@stefanobartoletti/nuxt-social-share', 
+    '@nuxt/scripts'
   ],
 
   app: {
@@ -16,10 +18,6 @@ export default defineNuxtConfig({
 
   colorMode: {
     classSuffix: ''
-  },
-
-  cloudflareAnalytics: {
-    token: 'putYourAnalyticsKeyHere',
   },
 
   compatibilityDate: '2024-12-16',
@@ -70,9 +68,26 @@ export default defineNuxtConfig({
     }
   },
 
+  runtimeConfig: {
+    public: {
+      version: pkg.version,
+      nuxtVersion: pkg.dependencies['nuxt'],
+      nuxtContentVersion: pkg.dependencies['@nuxt/content'],
+      vueVersion: pkg.dependencies['vue']
+    }
+  },
+
   router: {
     options: {
       scrollBehaviorType: 'smooth'
+    }
+  },
+
+  scripts: {
+    registry: {
+      cloudflareWebAnalytics: {
+        token: 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4'
+      }
     }
   },
 
@@ -82,10 +97,19 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    strictNuxtContentPaths: true
+    zeroRuntime: true,
   },
 
   socialShare: {
     baseUrl: 'https://JMSTprodURL'
+  },
+
+  vite: {
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+      ]
+    }
   }
 })
