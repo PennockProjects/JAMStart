@@ -14,22 +14,28 @@ const props = defineProps({
     default: 'left'
   },
   fontSize: {
-    type: String
+    type: String,
+    default: null
   },
   height: {
-    type: String
+    type: String,
+    default: null
   },
   lineHeight: {
-    type: String
+    type: String,
+    default: null
   },
   margin: { 
-    type: String
+    type: String,
+    default: null
   },
   maxHeight: {
-    type: String
+    type: String,
+    default: null   
   },
   maxWidth: {
-    type: String
+    type: String,
+    default: null
   },
   size: {
     type: String,
@@ -112,8 +118,6 @@ const divMarginOpposite = '0em'
 const imgMaxHeightClass = props.maxHeight || sizeDefaults[sizeString.value].imgMaxHeight
 const imgMaxWidthClass = props.maxWidth || sizeDefaults[sizeString.value].imgMaxWidth
 const pFontSizeClass = props.fontSize || sizeDefaults[sizeString.value].pFontSize
-const pLineHeightClass = props.lineHeight || sizeDefaults[sizeString.value].pLineHeight
-const pHeightClass = props.height || sizeDefaults[sizeString.value].pHeight
 const pMarginTop = sizeDefaults[sizeString.value].pMarginTop
 
 </script>

@@ -1,10 +1,11 @@
 ---
 title: Copyright & Licensing Notice
 description: This is a detailed notice about the copyright and licensing for the content and code for this website, including the use of the MIT License for code and the Creative Commons Attribution-ShareAlike 4.0 License for content.
-dateCreated: 2026-02-25
+date_created: 2026-02-25
 --- 
 
-© [JMSTcopyrightYears] [JMSTcopyrightName]. All rights reserved unless otherwise noted.
+::CopyrightLine
+::
 
 All written content, including blog articles and original media on this website, is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
 All source code, code snippets, service procedures, configuration examples, and downloadable code files are licensed under the [MIT License](https://opensource.org/licenses/MIT).

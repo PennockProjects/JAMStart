@@ -1,4 +1,6 @@
 <script setup>
+import { normalizeDateToNoon } from '#shared/utils/time'
+
 const props = defineProps({
   collection: {
     type: String,
@@ -9,12 +11,10 @@ const props = defineProps({
     default: false
   }
 })
-const route = useRoute()
 
 const { data: docs } = await useAsyncData(props.collection+'-list', () => {
   return queryCollection('content')
     .where('path',  'LIKE', '/'+props.collection+'/%')
-    .select('title', 'path', 'description', 'topic', 'dateCreated')
     .all()
 })
 
@@ -24,17 +24,19 @@ const posts = computed(() => {
   const result = []
   let lastYear = null;
 
-  // Create date strings for display
+  // Create meta data, date strings, file type, for display
   for(const post of docs.value) {
-    const dateCreated = dateNoonLocal(new Date(post?.dateCreated))
-    post.date = dateCreated
-    const year = dateCreated.getFullYear()
-    const month = dateCreated.getMonth() + 1
+    const date_created = normalizeDateToNoon(post?.date_created ?? '')
+    const date_obj = new Date(date_created)
+    post.date = date_obj
+    const year = date_obj.getFullYear()
+    const month = date_obj.getMonth() + 1
     const pMonth = month.toString().padStart(2,"0");
-    const day = dateCreated.getDate()
+    const day = date_obj.getDate()
     const pDay = day.toString().padStart(2,"0");
     post.monthDay = `${pMonth}-${pDay}`
     post.monthDayYear = `${pMonth}-${pDay}-${year}`
+    post.hasLeadingUnderscore = /(^|\/)_/.test(post?.path || '');
     result.push(post)
   }
 
@@ -43,8 +45,8 @@ const posts = computed(() => {
 
   // Add flag if this is the most recent post in the year
   for(const post of result) {
-    const dateCreated = post.date
-    const year = dateCreated.getFullYear()
+    const date_created = post.date
+    const year = date_created.getFullYear()
     post.isDisplayYear = (year != lastYear) ? true : false
     lastYear = year
   }
@@ -73,8 +75,22 @@ const posts = computed(() => {
               {{ post.isDisplayYear ? post.monthDayYear : post.monthDay }}
             </div>
             <div v-if="props.isShowTopic" class="hidden md:block md:col-span-2 font-light">{{ post.topic }}</div>
-            <div v-if="props.isShowTopic" class="col-span-8 md:col-span-6 font-semibold">{{ post.title }}</div>
-            <div v-else class="col-span-8 font-semibold">{{ post.title }}</div>
+            <div v-if="props.isShowTopic" class="col-span-8 md:col-span-6 font-semibold">
+              <span v-if="post.hasLeadingUnderscore" class="info">
+                {{ post.title }} dev only
+              </span>
+              <span v-else>
+                {{ post.title }}
+              </span>
+            </div>
+            <div v-else class="col-span-8 font-semibold">
+              <span v-if="post.hasLeadingUnderscore" class="info">
+                {{ post.title }} dev only
+              </span>
+              <span v-else>
+                {{ post.title }}
+              </span>
+            </div>
           </NuxtLink>
         </li>
       </ul>

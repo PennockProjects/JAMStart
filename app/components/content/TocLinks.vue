@@ -1,7 +1,10 @@
 <script setup>
 const route = useRoute()
 defineProps({
-  links: Array,
+  links: {
+    type: Array,
+    required: true
+  },
   level: {
     type: Number,
     default: 0
@@ -23,7 +26,7 @@ defineProps({
       >
         {{  link.text }}
       </NuxtLink>
-      <TocLinks :links="link.children" :level="level + 1" :activeId="activeId"/>
+      <TocLinks v-if="link.children && link.children.length" :links="link.children" :level="level + 1" :active-id="activeId"/>
     </li>
   </ul>
 </template>

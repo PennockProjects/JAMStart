@@ -6,6 +6,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        // JMSTfont start default Font family CSS
+        brand: ['Rubik', 'sans-serif'],
+        // JMSTfont end default Font family CSS
+      },
       typography: {
         DEFAULT: {
           css: {

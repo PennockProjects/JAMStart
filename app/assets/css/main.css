@@ -1,28 +1,17 @@
 /* text and background for light and dark modes */
+/* JMSTfont replace 'Rubik' with your Google Font pre-connected global font-family name */
+/* this should match the font-family in the /shared/utils/siteDefaults.ts file */
 body {
-  @apply bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-300
+  @apply font-brand bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-300
 }
 
-/* alert colors */
-.info {
-  @apply inline-block px-5 py-1 bg-blue-100 dark:bg-blue-700 text-blue-700 dark:text-blue-200 border-t-4 border-blue-500
+/* remove underline from links in superscript */
+sup a {
+  @apply !no-underline
 }
 
-.danger {
-  @apply inline-block px-5 py-1 bg-red-100 dark:bg-red-700 text-red-700 dark:text-red-200 border-t-4 border-red-500
-}
-
-.warn {
-  @apply inline-block px-5 py-1 bg-yellow-100 dark:bg-yellow-700 text-yellow-700 dark:text-yellow-200 border-t-4 border-yellow-500
-}
-
-.success { 
-  @apply inline-block px-5 py-1 bg-green-100 dark:bg-green-700 text-green-700 dark:text-green-200 border-t-4 border-green-500
-}
-
-
-
-/* code block remove last extraneous line  */
+/* Typographic prose styles */
+/* Remove the default content added by the ::before and ::after pseudo-elements for code blocks */
 .prose code::before, .prose code::after {
   content: "";
 }
@@ -35,6 +24,24 @@ body {
 /* code blocks styling for light modes  */
 .prose code {
   @apply text-black dark:text-white font-mono
+}
+
+/* Show an external-link indicator for markdown links that open in a new tab using an svg icon and isn't underlined */
+.prose a[target="_blank"]::after {
+  content: "";
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  margin-left: 0.2em;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 3h6v6'/%3E%3Cpath d='M17 3L9 11'/%3E%3Cpath d='M8 5H5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 3h6v6'/%3E%3Cpath d='M17 3L9 11'/%3E%3Cpath d='M8 5H5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  vertical-align: super;
+  line-height: 0;
 }
 
 /* line numbers in code blocks  */
@@ -53,7 +60,7 @@ code .line::before {
   @apply text-gray-300 dark:text-gray-500
 }
 
-/* Page Transitions */
+/* Page transitions animation classes */
 .page-enter-active {
   animation: bounce-in .7s;
 }
@@ -82,3 +89,21 @@ code .line::before {
     transform: scale(0);
   }
 }
+
+/* special alert classes */
+.info {
+  @apply inline-block px-5 py-1 bg-blue-100 dark:bg-blue-700 text-blue-700 dark:text-blue-200 border-t-4 border-blue-500
+}
+
+.danger {
+  @apply inline-block px-5 py-1 bg-red-100 dark:bg-red-700 text-red-700 dark:text-red-200 border-t-4 border-red-500
+}
+
+.warn {
+  @apply inline-block px-5 py-1 bg-yellow-100 dark:bg-yellow-700 text-yellow-700 dark:text-yellow-200 border-t-4 border-yellow-500
+}
+
+.success { 
+  @apply inline-block px-5 py-1 bg-green-100 dark:bg-green-700 text-green-700 dark:text-green-200 border-t-4 border-green-500
+}
+

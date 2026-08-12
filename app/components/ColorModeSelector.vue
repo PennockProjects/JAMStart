@@ -25,12 +25,12 @@ const toggleMode = () => colorMode.preference = nextMode.value
 
 <template>
   <div class="flex space-x-2 items-center">
-    <div class="text-gray-500 text-xs helptext" v-if="isShowNextModeLabel">{{ nextMode }}</div>
+    <div v-if="isShowNextModeLabel" class="text-gray-500 text-xs helptext">{{ nextMode }}</div>
     <button 
-      @click="toggleMode" 
+      class="hover:bg-gray-200 dark:hover:bg-gray-600 px-2 py-1 text-gray-500 text-base" 
+      @click="toggleMode"
       @mouseenter="isShowNextModeLabel = true"
-      @mouseleave="isShowNextModeLabel = false"
-      class="hover:bg-gray-200 dark:hover:bg-gray-600 px-2 py-1 text-gray-500 text-base">
+      @mouseleave="isShowNextModeLabel = false">
         {{ nextModeIcon }}
     </button>
   </div>

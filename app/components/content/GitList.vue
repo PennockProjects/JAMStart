@@ -8,7 +8,7 @@ const props = defineProps({
 
 const {error, pending, data} = await useFetch('https://api.github.com' + props.repos)
 
-const repos = computed(
+const foundRepos = computed(
   () => data.value.filter(repo => repo.description)
     .sort((a, b) => b.stargazers_count - a.stargazers_count)
 )
@@ -19,12 +19,12 @@ const repos = computed(
   <div class="not-prose">
     <section v-if="pending">Loading...</section>
     <section v-else-if="error">Something went wrong... Try again!</section>
-    <section v-else="pending">
-      <ul class="grid grid-cols-1 gap-4">
-        <li 
-          class="border border-gray-200 dark:border-gray-800 rounded-sm p-4 hover:bg-gray-200 dark:hover:bg-gray-800 font-mono"
-          v-for="repo in repos"
-          :key="repo.id">
+    <section v-else>
+      <ul v-if="foundRepos.length > 0" class="grid grid-cols-1 gap-4">
+        <li
+          v-for="repo in foundRepos"
+          :key="repo.id"
+          class="border border-gray-200 dark:border-gray-800 rounded-sm p-4 hover:bg-gray-200 dark:hover:bg-gray-800 font-mono">
           <a :href="repo.html_url" target="_blank">
             <div class="flex items-center justify-between text-sm">
               <div class="font-semibold">{{repo.name}}</div>
@@ -34,10 +34,7 @@ const repos = computed(
           </a>
         </li>
       </ul>
+      <div v-else>No repos found.</div>
     </section>
   </div>
 </template>
-
-<style lang="">
-  
-</style>

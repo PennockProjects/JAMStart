@@ -1,19 +1,27 @@
 import pkg from './package.json';
+import { defineNuxtConfig } from 'nuxt/config';
+import { siteDefaults, headDefaults } from './shared/utils/siteDefaults';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    '@nuxtjs/sitemap', // <-- Must be after @nuxtjs/sitemap
-    "@nuxt/content", 
-    '@nuxtjs/color-mode', 
+    '@nuxtjs/sitemap', // <-- Must be before @nuxtjs/content
+    "@nuxt/content",
+    '@nuxt/eslint',
+    '@nuxt/scripts',
+    '@nuxtjs/color-mode',
     '@nuxtjs/mdc',
-    '@nuxtjs/tailwindcss', 
-    '@stefanobartoletti/nuxt-social-share', 
-    '@nuxt/scripts'
+    '@nuxtjs/tailwindcss',
+    '@stefanobartoletti/nuxt-social-share',
   ],
 
   app: {
-    pageTransition: {name: 'page', mode: 'out-in'}
+    pageTransition: {name: 'page', mode: 'out-in'},
+    head: {
+      htmlAttrs: headDefaults.htmlAttrs,
+      link: headDefaults.links,
+      meta: headDefaults.meta,
+    }
   },
 
   colorMode: {
@@ -35,15 +43,14 @@ export default defineNuxtConfig({
             // sepia: 'monokai'
           },
           langs: [ 
-            'json', 'js', 'typescript', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'markdown', 'yaml',
-            'asm', 'c', 'cpp', 'python', 'reg', 'terraform'
+            'asm', 'c', 'cpp', 'css', 'html', 'js', 'json', 'markdown', 'mdc', 'python', 'reg', 'shell', 'terraform', 'ts', 'typescript', 'vue', 'yaml'
           ]
         },
         remarkPlugins: {
           'remark-unwrap-images': {}
         },
         toc: {
-          depth: 3,
+          depth: 2,
         }        
       }
     },
@@ -63,8 +70,26 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       autoSubfolderIndex: false,
-      crawlLinks: true,
-      routes: ['/sitemap.xml', '/', '/about', '/contact', '/privacy', '/terms']
+      crawlLinks: true
+    }
+  },
+
+  $production: {
+    scripts: {
+      registry: {
+        cloudflareWebAnalytics: {
+          token: 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4',
+          trigger: 'onNuxtReady',
+          proxy: false,
+          bundle: false
+        }
+      }
+    },
+  },
+
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
     }
   },
 
@@ -77,23 +102,9 @@ export default defineNuxtConfig({
     }
   },
 
-  router: {
-    options: {
-      scrollBehaviorType: 'smooth'
-    }
-  },
-
-  scripts: {
-    registry: {
-      cloudflareWebAnalytics: {
-        token: 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4'
-      }
-    }
-  },
-
   site: { 
-    url: 'https://JMSTprodURL',
-    name: 'JMSTprodName'
+    url: siteDefaults.siteProductionUrl,
+    name: siteDefaults.siteName,
   },
 
   sitemap: {
@@ -101,14 +112,20 @@ export default defineNuxtConfig({
   },
 
   socialShare: {
-    baseUrl: 'https://JMSTprodURL'
+    baseUrl: siteDefaults.siteProductionUrl
+  },
+
+  sourcemap: {
+    client: true
   },
 
   vite: {
     optimizeDeps: {
       include: [
+        'remark-unwrap-images',
         '@vue/devtools-core',
         '@vue/devtools-kit',
+        'zod'
       ]
     }
   }

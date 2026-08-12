@@ -1,29 +1,29 @@
-<script setup>
-const activeId = ref(null)
-const route = useRoute()
-const metaDefaults = inject("metaDefaults");
+<script setup lang="ts">
+import { setSEO } from '#shared/utils/setSEO'
+import type { PageData } from '~~/shared/utils/contentDataSchema'
+import type { Ref } from 'vue'
+import { useRoute } from 'vue-router'
 
+const activeId: Ref<string | undefined> = ref(undefined)
+const route = useRoute()
 
 const { data: page } = await useAsyncData(route.path, () => {
   return queryCollection('content').path(route.path).first()
 })
 
-const doc = page?.value || {}
-
-const nativeFrontMatter = {
-  title: doc.title,
-  description: doc.description,
-  navigation: doc.navigation
+if(!page?.value) {
+  console.warn(`No page data found for path: ${route.path}`);
 }
-const metaPage = { ...nativeFrontMatter, ...doc?.meta}
+const hasLeadingUnderscore = /(^|\/)_/.test(page?.value?.path || '');
+const links = page?.value?.body?.toc?.links || [];
+const seoSettings = setSEO(page?.value || {}, route.path)
+const pageData: PageData  = seoSettings.pageData;
 
-const seoSettings = setSEO(metaPage, metaDefaults, route.path)
-useHead(() => (seoSettings.head))
-useSeoMeta(seoSettings.seo)
+useHead(seoSettings.headData)
+useSeoMeta(seoSettings.seoMetaData)
 
 onMounted(() => {
-
-  const callback = (entries) => {
+  const callback = (entries: IntersectionObserverEntry[]) => {
     for (const entry of entries) {
       if (entry.isIntersecting) {
         activeId.value = entry.target.id
@@ -53,24 +53,35 @@ onMounted(() => {
 <template>
 <main>
   <article v-if="page" class="mx-auto">
-    <div class="grid grid-cols-10 gap-4">
+    <div class="grid grid-cols-10 gap-2">
       <div class="col-span-10 prose dark:prose-invert lg:prose-xl mx-auto">
-        <h1 class="article-header text-center" v-if="!metaPage.isManualTitle">{{ metaPage.title }}</h1>
-        <div class='text-sm text-center mb-1' v-if="metaPage.author">
-          <span v-if="metaPage.author">by {{ metaPage.author }}</span>
-          <span v-if="metaPage.dateCreated">&nbsp;{{  new Date(metaPage.dateCreated).toLocaleDateString() }}</span>
-        </div>
-        <div class="not-prose" v-if="metaPage.image && !metaPage.isManualImage">
-          <img :src="metaPage.image" :alt="metaPage.imageAlt" class="mx-auto max-h-52">
+        <span class="mb-1">
+          <span v-if="pageData.author">
+            <h1 class="article-header text-center" >{{ pageData.title }}</h1>
+            <div class='text-sm text-center mb-1'>
+              <span>by {{ pageData.author }}</span>
+              <span v-if="pageData.date_created">&nbsp;{{ new Date(pageData.date_created).toLocaleDateString() }}</span>
+            </div>
+          </span>
+          <span v-else>
+            <h1 class="text-center" >{{ pageData.title }}</h1>
+          </span>
+          <div v-if="hasLeadingUnderscore" class="text-sm text-center mb-1">
+            <span class="info text-center">Dev Only</span>
+          </div>
+        </span>
+        <div v-if="pageData.image" class="not-prose">
+          <img v-if="pageData.image_alt" :src="pageData.image" :alt="pageData.image_alt" class="mx-auto max-h-52">
+          <img v-else :src="pageData.image" class="mx-auto max-h-52">
         </div>
       </div>
       <div 
         class="prose dark:prose-invert lg:prose-xl prose-code:bg-gray-100 dark:prose-code:bg-black prose-pre:bg-gray-100 dark:prose-pre:bg-black mr-8 md:mr-4"
-        :class="{'col-span-10 md:col-span-7' : metaPage.isToc, 'col-span-10' : !metaPage.isToc}"
+        :class="{'col-span-10 md:col-span-7' : pageData.is_toc, 'col-span-10' : !pageData.is_toc}"
       >
-        <ContentRenderer :value="page" />
+        <ContentRenderer v-if="page" :value="page" :data="pageData" />
       </div>
-      <div class="hidden md:col-span-3 md:block" v-if="metaPage.isToc">
+      <div v-if="pageData.is_toc" class="hidden md:col-span-3 md:block">
         <aside class="sticky top-8">
           <div class="font-semibold mb-2">
             <NuxtLink 
@@ -80,7 +91,7 @@ onMounted(() => {
             </NuxtLink>
           </div>
           <nav>
-            <TocLinks :links="doc?.body?.toc?.links" :activeId="activeId" />
+            <TocLinks :links="links" :active-id="activeId" />
           </nav>
         </aside>
       </div>
@@ -108,7 +119,7 @@ onMounted(() => {
 
 <style scoped>
 h1.article-header {
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
 }
 .socialsharebank > a {
   @apply mr-3

@@ -4,11 +4,11 @@ description: This is the default home page for the JAMStart repo which is a stat
 topic: General
 ---
 
-The JAMStart project designed by [Pennock Projects](https://pennockprojects.com) to be a simple, easy-to-use and inexpensive template for static content web sites.
+The JAMStart project designed by [Pennock Projects](https://pennockprojects.com){target=_blank} to be a simple, easy-to-use and free template for static content web sites hosted on inexpensive hosting platforms like AWS S3, Cloudflare Pages, GitHub Pages, and Netlify. It is built using Nuxt.js, a popular Vue.js framework, and uses Markdown files for content creation. The project is designed to be easily customizable and extendable, allowing users to create their own unique static web sites with minimal effort.
 
-- For guides on how to use JAMStart, please visit [JAMStart Project Documentation](https://pennockprojects.com/projects/jamstart).
-- To see this current JAMStart site in action, please visit the [JAMStart Demo Site](https://jamstart.pennockprojects.com).
-- To examine the single source text file for this page, see: [JAMStart Home Page Markdown](https://github.com/PennockProjects/JAMStart/blob/main/content/index.md).
+- For guides on how to use JAMStart, please visit [JAMStart Project Documentation](https://pennockprojects.com/projects/jamstart){target=_blank}
+- To see this current JAMStart site in action, please visit the [JAMStart Demo Site](http://jamstart.pennockprojects.com){target=_blank}
+- To examine the single source text file for this page, see: [JAMStart Home Page Markdown](https://github.com/PennockProjects/JAMStart/blob/main/content/index.md){target=_blank}
 
 ### Home Page Markdown Example Content
 
@@ -76,6 +76,7 @@ JAMStart uses the following dependencies
 | `@nuxtjs/color-mode` | Handles light/dark modes. |
 | `@stefanobartoletti/nuxt-social-share` | A Nuxt module for adding social sharing buttons to your application. |
 | `nuxt-cloudflare-analytics` | Cloudflare Analytics telemetry. |
+| `zod` | A TypeScript-first schema validation library used for content schema validation. |
 
 ### Deployment Dependencies
 These dependencies are used to build and deploy the JAMStart project.

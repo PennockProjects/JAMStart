@@ -12,6 +12,6 @@
     <main class="p-1 md:p-2 mt-2 md:mt-10 mx-auto">
       <slot />
     </main>
-    <Footer />
+    <FooterMain />
   </div>
 </template>
