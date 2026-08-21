@@ -8,8 +8,8 @@ export const PageSchema = z
   .object({
     // Frontmatter default fields
     path: z.string().optional().nullable().default(''),
-    title: z.string().optional().nullable().default(''),
-    description: z.string().optional().nullable().default(''),
+    title: z.string().optional().nullable(),
+    description: z.string().optional().nullable(),
     // Frontmatter custom fields
     author: z.string().optional().nullable(),
     date_created: z.string().optional().nullable(),
@@ -71,7 +71,13 @@ export class PageData implements PageMatter {
   // Constructor to initialize the PageData object with parsed frontmatter data and defaults
   constructor(data: PageMatter, defaults: SiteDefaults = siteDefaults) {
     // Validate the incoming data at runtime before assigning
-    const validated = data ? PageSchema.parse(data) : {} as PageMatter;
+
+    if (!data || typeof data !== 'object') {
+      console.error('Page frontmatter data is not an object.', {
+        data,
+      });
+    }
+    const validated = PageSchema.parse(data);
     this.path = validated?.path || '';
 
     this.title = validated.title || defaults.title;

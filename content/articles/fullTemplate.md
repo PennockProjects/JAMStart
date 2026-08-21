@@ -15,9 +15,9 @@ og_image_alt: 'Placeholder text' # Template Open Graph Image Alt - use only if '
 x_title: Template Twitter Title
 x_description: Template Twitter Description
 x_image: /images/placeholder.jpg # Template Twitter Image Link - ideally 1200 x 600 for large card, or 800 x 800 square for summary
-x_image_alt: 'Placeholder text' # Template Twitter Image Alt - use only if 'image_alt' not sufficient
-x_card: Template Twitter Card - 'summary' (default) or 'summary_large_image' 
-x_creator_handle: Template Twitter Creator handle, default creator handle
+x_image_alt: 'Image alternate text for twitter only' # if different than 'image_alt'
+x_card: 'summary' # or 'summary_large_image'
+x_creator_handle: @TwitterHandle # Template Twitter Creator handle, default creator handle
 ---
 
 ## Full Front Matter
@@ -30,9 +30,31 @@ If a page defined `title`, `description`, and `image` variables, the social shar
 #### H4 Headings
 You can add an `<h4>` heading in Markdown by using four `#` symbols followed by a space and the heading text, for example: `#### H4 Heading`.  This is useful for creating sub-sections within your content.  Any heading level from H4 to H6 can be used in Markdown to style the content, but they are NOT used in the table of contents, which only uses H2 and H3 headings.  The table of contents is generated automatically based on the headings in the content.
 
-## Code Blocks
+## Markdown Mayhem
 
-The block below should show up as a code block on the web site.  It is a simple C program that prints "Hello World" to the console.  The code block should also have syntax highlighting for C programming language.  It was created using the triple backtick syntax with the language specified after the first set of backticks. ```c
+Here's a bunch of Markdown content to show how it looks on the web site.  You can add headings, lists, code blocks, and emojis.  The table of contents is generated automatically based on the headings in the content.  The table of contents only uses H2 and H3 headings, so if you want to create sub-sections within your content, you can use H4 to H6 headings.
+
+### Lists
+You can create ordered and unordered lists in Markdown.  Unordered lists use `-` or `*` followed by a space and the list item text.  Ordered lists use numbers followed by a period and a space.
+
+#### Unordered List
+- Item 1
+- Item 2
+  - Sub-item 2.1
+  - Sub-item 2.2
+
+#### Ordered List
+1. First item
+2. Second item
+   1. Sub-item 2.1
+   2. Sub-item 2.2
+
+### Emojis
+You can add emojis using the `:emoji_name:` syntax.  For example, `:smile:` will render as 😄.
+
+### Code Blocks
+You can add code blocks using triple backticks.  You can also specify the language for syntax
+highlighting.  For example, the following code block is a simple C program that prints "Hello World" to the terminal.
 
 ```c
 #include <stdio.h>

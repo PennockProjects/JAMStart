@@ -9,19 +9,24 @@ const PageSchemaSitemap = PageSchema.extend({
   })
 })
 
-const collectionConfig = {
-      type: 'page',
-      source: {
-        include: '**'
-      },
-      schema: PageSchemaSitemap,
-    }
-if(import.meta.env.PROD) {
-  collectionConfig.source.exclude = ['**/_*.md']  // 👈 Excludes any markdown file starting with an underscore in prod
-}
+// Use Node.js process.env.NODE_ENV to determine if the environment is production or development when content.config is executed. Vite provides import.meta.env.MODE or import.meta.env.PROD for similar purposes in a Vite context.
+const isProd = process.env.NODE_ENV === 'production';
+
+console.log('environment:', isProd ? 'prod' : 'dev')
 
 export default defineContentConfig({
   collections: {
-    content: defineCollection(collectionConfig),
+    content: defineCollection({
+      type: 'page',
+      source: isProd 
+        ? {
+            include: '**',
+            exclude: ['**/_*.md']
+          }
+        : {
+          include: '**',
+          },
+      schema: PageSchemaSitemap,
+    }),
   },
 })

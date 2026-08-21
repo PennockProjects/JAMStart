@@ -74,18 +74,19 @@ export default defineNuxtConfig({
     }
   },
 
-  $production: {
-    scripts: {
-      registry: {
-        cloudflareWebAnalytics: {
-          token: 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4',
-          trigger: 'onNuxtReady',
-          proxy: false,
-          bundle: false
-        }
-      }
-    },
-  },
+  // Uncomment the following section to enable Cloudflare Web Analytics in production builds. Make sure to replace the token with your actual Cloudflare Web Analytics token.
+  // $production: {
+  //   scripts: {
+  //     registry: {
+  //       cloudflareWebAnalytics: {
+  //         token: 'a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4',
+  //         trigger: 'onNuxtReady',
+  //         proxy: false,
+  //         bundle: false
+  //       }
+  //     }
+  //   },
+  // },
 
   router: {
     options: {

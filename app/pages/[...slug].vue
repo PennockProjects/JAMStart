@@ -7,16 +7,40 @@ import { useRoute } from 'vue-router'
 const activeId: Ref<string | undefined> = ref(undefined)
 const route = useRoute()
 
-const { data: page } = await useAsyncData(route.path, () => {
-  return queryCollection('content').path(route.path).first()
+const normalizeRoutePath = (path: string): string => {
+  if (!path || path === '/') {
+    return '/'
+  }
+  return path.replace(/\/+$/, '') || '/'
+}
+
+const buildCandidateStems = (path: string): string[] => {
+  if (path === '/') {
+    return ['index']
+  }
+  const base = path.replace(/^\//, '')
+  return [base, `${base}/index`]
+}
+
+const normalizedPath = normalizeRoutePath(route.path)
+const stemCandidates = buildCandidateStems(normalizedPath)
+
+const { data: page } = await useAsyncData(`content:${normalizedPath}`, async () => {
+  for (const stem of stemCandidates) {
+    const match = await queryCollection('content').where('stem', 'LIKE', stem).first()
+    if (match) {
+      return match
+    }
+  }
+  return null
 })
 
 if(!page?.value) {
-  console.warn(`No page data found for path: ${route.path}`);
+  console.warn(`No page data found for path: ${normalizedPath}`);
 }
-const hasLeadingUnderscore = /(^|\/)_/.test(page?.value?.path || '');
+const hasLeadingUnderscore = /(^|\/)_/.test(typeof page?.value?.path === 'string' ? page.value.path : '');
 const links = page?.value?.body?.toc?.links || [];
-const seoSettings = setSEO(page?.value || {}, route.path)
+const seoSettings = setSEO(page?.value || {}, normalizedPath)
 const pageData: PageData  = seoSettings.pageData;
 
 useHead(seoSettings.headData)

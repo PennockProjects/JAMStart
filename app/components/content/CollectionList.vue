@@ -14,7 +14,8 @@ const props = defineProps({
 
 const { data: docs } = await useAsyncData(props.collection+'-list', () => {
   return queryCollection('content')
-    .where('path',  'LIKE', '/'+props.collection+'/%')
+    .where('stem',  'LIKE', props.collection+'/%')
+    .where('stem', '!=', props.collection+'/index')
     .all()
 })
 

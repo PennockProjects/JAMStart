@@ -25,14 +25,11 @@ export const setSEO = (
         routePath,
         route: route.fullPath,
       });
-    } else if(!(pageRaw?.title)) {
-      console.warn('Page frontmatter is missing the "title" field.', {
-        pageRaw,
-        routePath,
-        route: route.fullPath,
-      });
+      pageRaw = {} as ContentCollectionItem; // Fallback to an empty object if pageRaw is not valid
     }
-
+    // Attempt to create a new PageData instance from the provided pageRaw data
+    // If pageRaw is not a valid ContentCollectionItem, this will throw an error and be caught in the catch block
+    // The PageData constructor will handle missing fields by using defaults where necessary
     pageData = new PageData(pageRaw as PageMatter, defaults);
 
   } catch (error) {

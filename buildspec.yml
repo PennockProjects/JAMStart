@@ -1,4 +1,4 @@
-version: 0.2
+version: 0.3
 
 phases:
   install:
@@ -11,14 +11,13 @@ phases:
     on-failure: ABORT
     commands:
       - echo Build started on `date`
-      - npm run generate
+      - npm run build:prod
+      - ls .output/public
   post_build:
     on-failure: ABORT
     commands:
       - echo ----- post_build DEPLOY build to stage site on `date` -----
       - npm run deploy:build:stage
-      - echo ----- post_build FIX stage site on `date` -----
-      - npm run fix:stage
 artifacts:
   files:
     - '**/*'
