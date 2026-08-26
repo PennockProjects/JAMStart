@@ -6,7 +6,7 @@ image_alt: 'Placeholder text' #Template Image Alt Text description
 author: Template Article Author
 date_modified: 2026-01-03 # optional for when updated, date_created is required
 is_toc: true
-date_created: 2026-01-02
+date_created: 2026-01-01
 editor: Template Article Editor # optional, for second author
 og_title: Template Open Graph Title
 og_description: Template Open Graph Description

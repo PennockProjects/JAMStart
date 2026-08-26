@@ -1,6 +1,6 @@
 ---
-title: JAMStart Home
-description: This is the default home page for the JAMStart repo which is a static web site generated using Nuxt.js front-end, Markdown content, and git based deployment.
+title: PascalPlaceholderJAMStart Home
+description: This is the home page for PascalPlaceholderJAMStart.
 topic: General
 ---
 

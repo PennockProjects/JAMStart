@@ -7,7 +7,7 @@ image_alt:  A table with journal, pen, and coffee cup
 
 # Base fields for "authored" pages
 author: John Doe
-date_created: 2026-01-05
+date_created: 2025-07-07
 
 # Extra fields
 is_toc: true
